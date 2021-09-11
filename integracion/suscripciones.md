@@ -2,6 +2,24 @@
 label: Suscripciones - endpoints de integración
 icon: gear
 ---
+
+***Resumen de acciones:***
+
+```mermaid
+sequenceDiagram
+    participant S as Suscripción
+    participant F as Facturación y Autogestión
+    S->>F: Nuevo registro de suscripción.
+    F->>S: Nuevo registro suscripción a paquete.
+    F->>S: Modificación de suscripción a paquete.
+    F->>S: Cancelación suscripción a paquete.
+    F->>S: Aviso de pago.
+
+```
+
+***Cada acción explicada:***
+
+
 ==- Registrar suscripción y usuario en F&A
 
 ||| Del módulo
