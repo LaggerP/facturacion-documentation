@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: http://laggerp.me/facturacion-documentation/sitemap.xml.gz
+Sitemap: https://laggerp.me/facturacion-documentation/sitemap.xml.gz
