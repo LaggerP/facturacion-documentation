@@ -1,0 +1,4 @@
+---
+label: Endpoints
+icon: gear
+---

@@ -1,0 +1,9 @@
+input: .
+output: .retype
+url: # Add your website address here
+branding:
+  title: Facturación y Autogestión
+  label: Docs
+links:
+- text: Documentación
+  link: https://retype.com/guides/getting-started/
