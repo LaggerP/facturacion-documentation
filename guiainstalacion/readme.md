@@ -1,4 +1,4 @@
-# Configuración de proyectos
+# Configuración del proyecto (front y back)
 
 A continuación se procederá a mostrar como realizar la configuración inicial del módulo de Facturación y Autogestión.
 

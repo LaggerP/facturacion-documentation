@@ -13,8 +13,8 @@ sequenceDiagram
     participant A as Aplicación
     participant S as Suscripción
     participant F as Facturación y Autogestión
-    A->>S: ¡Hola! me quiero suscribir a estos paquetes
-    S->>F: Che, quiero que me factures mes a mes estos paquetes a 'x' usuario
+    A->>S: ¡Hola, soy X y me quiero suscribir a estos paquetes!
+    S->>F: Che, quiero que le factures mes a mes estos paquetes al usuario 'X'
 ```
 
 Una vez generada la carga de facturación mensual (registro del usuario en nuestro sistema), nuestro módulo permitirá:
