@@ -7,21 +7,23 @@
     <meta name="turbo-cache-control" content="no-cache">
 
     <!-- Primary Meta Tags -->
-    <title>Back End</title>
-    <meta name="title" content="Back End">
-    <meta name="description" content="Clonar" />
+    <title>Estructura del proyecto</title>
+    <meta name="title" content="Estructura del proyecto">
+    <meta name="description" content="Comunicación entre partes" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://laggerp.me/facturacion-documentation/guiainstalacion/back/">
-    <meta property="og:title" content="Back End">
-    <meta property="og:description" content="Clonar">
+    <meta property="og:url" content="https://laggerp.me/facturacion-documentation/estructura/">
+    <meta property="og:title" content="Estructura del proyecto">
+    <meta property="og:description" content="Comunicación entre partes">
+    <meta property="og:image" content="https://laggerp.me/facturacion-documentation/facturacion-documentation/static/tecnologiasproyecto.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://laggerp.me/facturacion-documentation/guiainstalacion/back/">
-    <meta property="twitter:title" content="Back End">
-    <meta property="twitter:description" content="Clonar">
+    <meta property="twitter:url" content="https://laggerp.me/facturacion-documentation/estructura/">
+    <meta property="twitter:title" content="Estructura del proyecto">
+    <meta property="twitter:description" content="Comunicación entre partes">
+    <meta property="twitter:image" content="https://laggerp.me/facturacion-documentation/facturacion-documentation/static/tecnologiasproyecto.png">
     
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("/facturacion-documentation/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
@@ -162,50 +164,34 @@
                 <div id="docs-sidebar-right-toggle"></div>
                
                 <!-- Page content  -->
-<doc-anchor-target id="back-end" class="break-words">
+<doc-anchor-target id="estructura-del-proyecto" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#back-end">#</doc-anchor-trigger>
-        <span>Back End</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#estructura-del-proyecto">#</doc-anchor-trigger>
+        <span>Estructura del proyecto</span>
     </h1>
 </doc-anchor-target>
-<doc-anchor-target id="última-actualización-10102021">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#última-actualización-10102021">#</doc-anchor-trigger>
-        <span>Última actualización: <em>10/10/2021</em></span>
-    </h3>
-</doc-anchor-target>
-<hr />
-<p>Clonar  <a href="https://github.com/LaggerP/facturacion-back" target="_blank" class="no-link inline-flex items-center font-medium cursor-pointer transition-colors duration-200 ease-out focus:outline-none bg-blue-100 hover:bg-blue-200 text-blue-600 px-2.5 h-6 text-xs rounded">
-    <span>repositorio Back End</span>
-</a></p>
-<hr />
-<doc-anchor-target id="instalación-dependencias-del-proyecto">
+<doc-anchor-target id="tecnologías-utilizadas-en-el-proyecto">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#instalación-dependencias-del-proyecto">#</doc-anchor-trigger>
-        <span>Instalación dependencias del proyecto:</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#tecnologías-utilizadas-en-el-proyecto">#</doc-anchor-trigger>
+        <span>Tecnologías utilizadas en el proyecto</span>
     </h4>
 </doc-anchor-target>
-<p><code v-pre>$ npm install</code></p>
-<hr />
-<doc-anchor-target id="configuración-de-ambiente-de-desarrollo">
+<p><figure class="content-center">
+    <img src="/facturacion-documentation/static/tecnologiasproyecto.png" alt="Comunicación entre partes" />
+    <figcaption class="caption">Comunicación entre partes</figcaption>
+</figure>
+</p>
+<doc-anchor-target id="der">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#configuración-de-ambiente-de-desarrollo">#</doc-anchor-trigger>
-        <span>Configuración de ambiente de desarrollo:</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#der">#</doc-anchor-trigger>
+        <span>DER</span>
     </h4>
 </doc-anchor-target>
-<p>Para hacer uso completo de la aplicación de forma local es necesario tener una BD MySQL corriendo bajo el puerto 3306.</p>
-<p>Crear un archivo <code v-pre>.env</code> con las siguientes variables de entorno:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none"> DEV=true
- AUTH_SECRET=tuSecretAuth
- AUTH_EXPIRES=1d
- AUTH_ROUNDS=10
- DEV_DB_HOST=localhost
- PROD_DB_PORT=3306
- DEV_DB_USER=tu_DB_local_USER
- DEV_DB_PASS=tu_DB_local_PASS
- DEV_DB_DB=tu_DB_local_DB</code></pre>
-</doc-codeblock></div>
+<p><figure class="content-center">
+    <img src="/facturacion-documentation/static/bdstructure.png" alt="Estructura de la base de datos" />
+    <figcaption class="caption">Estructura de la base de datos</figcaption>
+</figure>
+</p>
 
 
 
@@ -217,20 +203,20 @@
             
 <nav class="flex mt-14">
     <div class="w-1/2">
-        <a class="px-5 py-4 h-full flex items-center break-all md:break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="/facturacion-documentation/guiainstalacion/front/">
+        <a class="px-5 py-4 h-full flex items-center break-all md:break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="/facturacion-documentation/">
             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
             <span>
                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                <span class="block mt-1">Front-End</span>
+                <span class="block mt-1">Inicio</span>
             </span>
         </a>
     </div>
 
     <div class="w-1/2">
-        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-all md:break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="/facturacion-documentation/guiauso/">
+        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-all md:break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="/facturacion-documentation/guiainstalacion/">
             <span>
                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                <span class="block mt-1">Guía de uso</span>
+                <span class="block mt-1">Configuración del proyecto (front y back)</span>
             </span>
             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
         </a>
@@ -277,6 +263,6 @@
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "Back-End", icon: "file", hasPrism: false, hasMermaid: false }</script>
+        <script>window.__DOCS__ = { "title": "Estructura del proyecto", icon: "file", hasPrism: false, hasMermaid: false }</script>
     </body>
 </html>

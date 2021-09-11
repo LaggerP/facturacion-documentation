@@ -7,21 +7,21 @@
     <meta name="turbo-cache-control" content="no-cache">
 
     <!-- Primary Meta Tags -->
-    <title>Back End</title>
-    <meta name="title" content="Back End">
-    <meta name="description" content="Clonar" />
+    <title>Suscripciones - endpoints de integraci&#243;n</title>
+    <meta name="title" content="Suscripciones - endpoints de integración">
+    <meta name="description" content="Suscripciones" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://laggerp.me/facturacion-documentation/guiainstalacion/back/">
-    <meta property="og:title" content="Back End">
-    <meta property="og:description" content="Clonar">
+    <meta property="og:url" content="https://laggerp.me/facturacion-documentation/integracion/suscripciones/">
+    <meta property="og:title" content="Suscripciones - endpoints de integración">
+    <meta property="og:description" content="Suscripciones">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://laggerp.me/facturacion-documentation/guiainstalacion/back/">
-    <meta property="twitter:title" content="Back End">
-    <meta property="twitter:description" content="Clonar">
+    <meta property="twitter:url" content="https://laggerp.me/facturacion-documentation/integracion/suscripciones/">
+    <meta property="twitter:title" content="Suscripciones - endpoints de integración">
+    <meta property="twitter:description" content="Suscripciones">
     
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("/facturacion-documentation/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
@@ -30,6 +30,8 @@
 
     <script type="text/javascript" src="/facturacion-documentation/resources/js/config.js?v=1.9.684717151922" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/facturacion-documentation/resources/js/retype.js?v=1.9" defer data-turbo-track="reload"></script>
+    <script id="prism-js" type="text/javascript" src="/facturacion-documentation/resources/js/prism.js?v=1.9.684717151922" defer></script>
+    <script id="mermaid-js" type="text/javascript" src="/facturacion-documentation/resources/js/mermaid.js?v=1.9" defer></script>
 </head>
     <body>
         <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -162,50 +164,166 @@
                 <div id="docs-sidebar-right-toggle"></div>
                
                 <!-- Page content  -->
-<doc-anchor-target id="back-end" class="break-words">
+<doc-anchor-target id="suscripciones---endpoints-de-integración" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#back-end">#</doc-anchor-trigger>
-        <span>Back End</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#suscripciones---endpoints-de-integración">#</doc-anchor-trigger>
+        <span>Suscripciones - endpoints de integración</span>
     </h1>
 </doc-anchor-target>
-<doc-anchor-target id="última-actualización-10102021">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#última-actualización-10102021">#</doc-anchor-trigger>
-        <span>Última actualización: <em>10/10/2021</em></span>
-    </h3>
-</doc-anchor-target>
-<hr />
-<p>Clonar  <a href="https://github.com/LaggerP/facturacion-back" target="_blank" class="no-link inline-flex items-center font-medium cursor-pointer transition-colors duration-200 ease-out focus:outline-none bg-blue-100 hover:bg-blue-200 text-blue-600 px-2.5 h-6 text-xs rounded">
-    <span>repositorio Back End</span>
-</a></p>
-<hr />
-<doc-anchor-target id="instalación-dependencias-del-proyecto">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#instalación-dependencias-del-proyecto">#</doc-anchor-trigger>
-        <span>Instalación dependencias del proyecto:</span>
-    </h4>
-</doc-anchor-target>
-<p><code v-pre>$ npm install</code></p>
-<hr />
-<doc-anchor-target id="configuración-de-ambiente-de-desarrollo">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#configuración-de-ambiente-de-desarrollo">#</doc-anchor-trigger>
-        <span>Configuración de ambiente de desarrollo:</span>
-    </h4>
-</doc-anchor-target>
-<p>Para hacer uso completo de la aplicación de forma local es necesario tener una BD MySQL corriendo bajo el puerto 3306.</p>
-<p>Crear un archivo <code v-pre>.env</code> con las siguientes variables de entorno:</p>
+<doc-panel id="registrar-suscripción-y-usuario-en-f-a" collapsed>
+    <template #title>Registrar suscripción y usuario en F&amp;A</template>
+<div class="mb-6 overflow-hidden border rounded-md docs-columns dark:border-dark-650" style="grid-template-columns: repeat(3, minmax(0, 1fr));">
+    <div class="flex items-center px-5 py-3 font-medium leading-snug text-gray-900 border-b border-gray-200 dark:border-dark-650 dark:text-white border-r">
+        <span>Del módulo</span>
+    </div>
+    <div class="flex items-center px-5 py-3 font-medium leading-snug text-gray-900 border-b border-gray-200 dark:border-dark-650 dark:text-white border-r">
+        <span>Al módulo</span>
+    </div>
+    <div class="flex items-center px-5 py-3 font-medium leading-snug text-gray-900 border-b border-gray-200 dark:border-dark-650 dark:text-white">
+        <span>Descripción</span>
+    </div>
+    <div class="px-5 py-3 docs-columns-content border-r border-gray-200 dark:border-dark-650">
+<p>Suscripciones</p>
+    </div>
+    <div class="px-5 py-3 docs-columns-content border-r border-gray-200 dark:border-dark-650">
+<p>Facturación y Autogestión (F&amp;A)</p>
+    </div>
+    <div class="px-5 py-3 docs-columns-content">
+<p>Nuevo registro de paquete(s) y usuario en el sistema de F&amp;A</p>
+    </div>
+</div>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none"> DEV=true
- AUTH_SECRET=tuSecretAuth
- AUTH_EXPIRES=1d
- AUTH_ROUNDS=10
- DEV_DB_HOST=localhost
- PROD_DB_PORT=3306
- DEV_DB_USER=tu_DB_local_USER
- DEV_DB_PASS=tu_DB_local_PASS
- DEV_DB_DB=tu_DB_local_DB</code></pre>
+<pre class="language-javascript"><code v-pre class="language-javascript">// Example request structure for new bill registration
+
+let subscriptionData = {
+   userObjectId: &quot;507f1f77bcf86cd799439011&quot;, // ObjectId del usuario (debe ser el mismo que el de la base de datos de SSO)
+   firstName: &quot;John&quot;,
+   lastName: &quot;Doe&quot;,
+   email: &quot;john_doe@email.com&quot;,
+   telephone: &quot;123456789&quot;,
+   packageId: [1,2], //IDs de el o los paquetes contratados (deben ser los mismos que el de la base de datos de suscripciones)
+   packageCost: 200
+}</code></pre>
 </doc-codeblock></div>
+<div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre class="mermaid w-full">sequenceDiagram
+    Suscripciones-&gt;&gt;F&amp;A: subscriptionData
+    alt Correct register
+        F&amp;A-&gt;&gt;Suscripciones: {status: 201, msg: Correct register}
+    else Bad register
+        F&amp;A-&gt;&gt;Suscripciones: {status: 400, msg: Bad register}
+    end
+    opt Server error
+        F&amp;A-&gt;&gt;Suscripciones: {status: 500, msg: Server error}
+    end</pre></div>
+</doc-panel>
+<doc-panel id="crear-nueva-suscripción-en-suscripciones" collapsed>
+    <template #title>Crear nueva suscripción en suscripciones</template>
+<div class="mb-6 overflow-hidden border rounded-md docs-columns dark:border-dark-650" style="grid-template-columns: repeat(3, minmax(0, 1fr));">
+    <div class="flex items-center px-5 py-3 font-medium leading-snug text-gray-900 border-b border-gray-200 dark:border-dark-650 dark:text-white border-r">
+        <span>Del módulo</span>
+    </div>
+    <div class="flex items-center px-5 py-3 font-medium leading-snug text-gray-900 border-b border-gray-200 dark:border-dark-650 dark:text-white border-r">
+        <span>Al módulo</span>
+    </div>
+    <div class="flex items-center px-5 py-3 font-medium leading-snug text-gray-900 border-b border-gray-200 dark:border-dark-650 dark:text-white">
+        <span>Descripción</span>
+    </div>
+    <div class="px-5 py-3 docs-columns-content border-r border-gray-200 dark:border-dark-650">
+<p>Facturación y Autogestión (F&amp;A)</p>
+    </div>
+    <div class="px-5 py-3 docs-columns-content border-r border-gray-200 dark:border-dark-650">
+<p>Suscripciones</p>
+    </div>
+    <div class="px-5 py-3 docs-columns-content">
+<p>Se le notifica a suscripciones que usuario se suscribió a un nuevo paquete.</p>
+    </div>
+</div>
+</doc-panel>
+<doc-panel id="modificar-suscripción-en-suscripciones" collapsed>
+    <template #title>Modificar suscripción en suscripciones</template>
+<div class="mb-6 overflow-hidden border rounded-md docs-columns dark:border-dark-650" style="grid-template-columns: repeat(3, minmax(0, 1fr));">
+    <div class="flex items-center px-5 py-3 font-medium leading-snug text-gray-900 border-b border-gray-200 dark:border-dark-650 dark:text-white border-r">
+        <span>Del módulo</span>
+    </div>
+    <div class="flex items-center px-5 py-3 font-medium leading-snug text-gray-900 border-b border-gray-200 dark:border-dark-650 dark:text-white border-r">
+        <span>Al módulo</span>
+    </div>
+    <div class="flex items-center px-5 py-3 font-medium leading-snug text-gray-900 border-b border-gray-200 dark:border-dark-650 dark:text-white">
+        <span>Descripción</span>
+    </div>
+    <div class="px-5 py-3 docs-columns-content border-r border-gray-200 dark:border-dark-650">
+<p>Facturación y Autogestión (F&amp;A)</p>
+    </div>
+    <div class="px-5 py-3 docs-columns-content border-r border-gray-200 dark:border-dark-650">
+<p>Suscripciones</p>
+    </div>
+    <div class="px-5 py-3 docs-columns-content">
+<p>Se le notifica a suscripciones que usuario modificó un paquete.</p>
+    </div>
+</div>
+</doc-panel>
+<doc-panel id="cancelar-suscripción-en-suscripciones" collapsed>
+    <template #title>Cancelar suscripción en suscripciones</template>
+<div class="mb-6 overflow-hidden border rounded-md docs-columns dark:border-dark-650" style="grid-template-columns: repeat(3, minmax(0, 1fr));">
+    <div class="flex items-center px-5 py-3 font-medium leading-snug text-gray-900 border-b border-gray-200 dark:border-dark-650 dark:text-white border-r">
+        <span>Del módulo</span>
+    </div>
+    <div class="flex items-center px-5 py-3 font-medium leading-snug text-gray-900 border-b border-gray-200 dark:border-dark-650 dark:text-white border-r">
+        <span>Al módulo</span>
+    </div>
+    <div class="flex items-center px-5 py-3 font-medium leading-snug text-gray-900 border-b border-gray-200 dark:border-dark-650 dark:text-white">
+        <span>Descripción</span>
+    </div>
+    <div class="px-5 py-3 docs-columns-content border-r border-gray-200 dark:border-dark-650">
+<p>Facturación y Autogestión (F&amp;A)</p>
+    </div>
+    <div class="px-5 py-3 docs-columns-content border-r border-gray-200 dark:border-dark-650">
+<p>Suscripciones</p>
+    </div>
+    <div class="px-5 py-3 docs-columns-content">
+<p>Se le notifica a suscripciones que usuario canceló a un paquete.</p>
+    </div>
+</div>
+</doc-panel>
+<doc-panel id="aviso-de-pago" collapsed>
+    <template #title>Aviso de pago</template>
+<div class="mb-6 overflow-hidden border rounded-md docs-columns dark:border-dark-650" style="grid-template-columns: repeat(3, minmax(0, 1fr));">
+    <div class="flex items-center px-5 py-3 font-medium leading-snug text-gray-900 border-b border-gray-200 dark:border-dark-650 dark:text-white border-r">
+        <span>Del módulo</span>
+    </div>
+    <div class="flex items-center px-5 py-3 font-medium leading-snug text-gray-900 border-b border-gray-200 dark:border-dark-650 dark:text-white border-r">
+        <span>Al módulo</span>
+    </div>
+    <div class="flex items-center px-5 py-3 font-medium leading-snug text-gray-900 border-b border-gray-200 dark:border-dark-650 dark:text-white">
+        <span>Descripción</span>
+    </div>
+    <div class="px-5 py-3 docs-columns-content border-r border-gray-200 dark:border-dark-650">
+<p>Facturación y Autogestión (F&amp;A)</p>
+    </div>
+    <div class="px-5 py-3 docs-columns-content border-r border-gray-200 dark:border-dark-650">
+<p>Suscripciones</p>
+    </div>
+    <div class="px-5 py-3 docs-columns-content">
+<p>Se notifica el o no pago de una suscripcion. Se modifica el estado de la tabla de suscripciones</p>
+    </div>
+</div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-javascript"><code v-pre class="language-javascript">// Example request structure to be defined
+
+let payData = {}
+</code></pre>
+</doc-codeblock></div>
+<div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre class="mermaid w-full">sequenceDiagram
+    F&amp;A-&gt;&gt;Suscripciones: payData
+    alt Correct register
+        Suscripciones-&gt;&gt;F&amp;A: {status: 201, msg: Correct register}
+    else Bad register
+        Suscripciones-&gt;&gt;F&amp;A: {status: 400, msg: Bad register}
+    end
+    opt Server error
+        F&amp;A-&gt;&gt;Suscripciones: {status: 500, msg: Server error}
+    end</pre></div>
+</doc-panel>
 
 
 
@@ -217,23 +335,16 @@
             
 <nav class="flex mt-14">
     <div class="w-1/2">
-        <a class="px-5 py-4 h-full flex items-center break-all md:break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="/facturacion-documentation/guiainstalacion/front/">
+        <a class="px-5 py-4 h-full flex items-center break-all md:break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r rounded-l-lg transition-colors duration-150 relative hover:z-5" href="/facturacion-documentation/integracion/clientes/">
             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
             <span>
                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                <span class="block mt-1">Front-End</span>
+                <span class="block mt-1">Aplicación cliente - endpoints de integración</span>
             </span>
         </a>
     </div>
 
     <div class="w-1/2">
-        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-all md:break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="/facturacion-documentation/guiauso/">
-            <span>
-                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                <span class="block mt-1">Guía de uso</span>
-            </span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
-        </a>
     </div>
 </nav>
 
@@ -277,6 +388,6 @@
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "Back-End", icon: "file", hasPrism: false, hasMermaid: false }</script>
+        <script>window.__DOCS__ = { "title": "Suscripciones - endpoints de integración", icon: "file", hasPrism: true, hasMermaid: true }</script>
     </body>
 </html>
