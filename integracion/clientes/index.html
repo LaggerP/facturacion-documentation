@@ -9,24 +9,28 @@
     <!-- Primary Meta Tags -->
     <title>Aplicaci&#243;n cliente - endpoints de integraci&#243;n</title>
     <meta name="title" content="Aplicación cliente - endpoints de integración">
+    <meta name="description" content="Resumen de acciones:**" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://laggerp.me/facturacion-documentation/integracion/clientes/">
     <meta property="og:title" content="Aplicación cliente - endpoints de integración">
+    <meta property="og:description" content="Resumen de acciones:**">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://laggerp.me/facturacion-documentation/integracion/clientes/">
     <meta property="twitter:title" content="Aplicación cliente - endpoints de integración">
+    <meta property="twitter:description" content="Resumen de acciones:**">
     
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("/facturacion-documentation/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="/facturacion-documentation/favicon.ico" rel="icon" />
-    <link href="/facturacion-documentation/resources/css/retype.css?v=1.9.684717151922" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/facturacion-documentation/resources/css/retype.css?v=1.9.684718200003" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/facturacion-documentation/resources/js/config.js?v=1.9.684717151922" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/facturacion-documentation/resources/js/config.js?v=1.9.684718200003" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/facturacion-documentation/resources/js/retype.js?v=1.9" defer data-turbo-track="reload"></script>
+    <script id="mermaid-js" type="text/javascript" src="/facturacion-documentation/resources/js/mermaid.js?v=1.9" defer></script>
 </head>
     <body>
         <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -165,12 +169,13 @@
         <span>Aplicación cliente - endpoints de integración</span>
     </h1>
 </doc-anchor-target>
-<doc-anchor-target id="ingresar-a-sistema-de-facturación-y-autogestión">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#ingresar-a-sistema-de-facturación-y-autogestión">#</doc-anchor-trigger>
-        <span>Ingresar a sistema de Facturación y autogestión</span>
-    </h3>
-</doc-anchor-target>
+<p><em><strong>Resumen de acciones:</strong></em></p>
+<div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre class="mermaid w-full">sequenceDiagram
+    participant A as Aplicación cliente
+    participant F as Facturación y Autogestión
+    A-&gt;&gt;F: Acceso aplicación de F&amp;A Cliente.
+ 
+</pre></div>
 
 
 
@@ -242,6 +247,6 @@
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "Aplicación cliente - endpoints de integración", icon: "file", hasPrism: false, hasMermaid: false }</script>
+        <script>window.__DOCS__ = { "title": "Aplicación cliente - endpoints de integración", icon: "file", hasPrism: false, hasMermaid: true }</script>
     </body>
 </html>
