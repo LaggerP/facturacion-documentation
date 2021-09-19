@@ -26,9 +26,9 @@
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("/facturacion-documentation/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="/facturacion-documentation/favicon.ico" rel="icon" />
-    <link href="/facturacion-documentation/resources/css/retype.css?v=1.9.684718200003" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/facturacion-documentation/resources/css/retype.css?v=1.9.685388258001" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/facturacion-documentation/resources/js/config.js?v=1.9.684718200003" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/facturacion-documentation/resources/js/config.js?v=1.9.685388258001" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/facturacion-documentation/resources/js/retype.js?v=1.9" defer data-turbo-track="reload"></script>
     <script id="mermaid-js" type="text/javascript" src="/facturacion-documentation/resources/js/mermaid.js?v=1.9" defer></script>
 </head>
@@ -47,7 +47,7 @@
             <div class="flex items-center px-2 md:px-6">
                 <a id="docs-site-logo" href="/facturacion-documentation/" class="flex items-center leading-snug text-xl">
                     <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">Facturación y Autogestión</span>
-                </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">v0.0.1</span>
+                </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">v1.0.0</span>
             </div>
 
             <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
@@ -169,6 +169,12 @@
         <span>Facturación y Autogestión</span>
     </h1>
 </doc-anchor-target>
+<doc-anchor-target id="explicación-inicial">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#explicación-inicial">#</doc-anchor-trigger>
+        <span>Explicación inicial.</span>
+    </h3>
+</doc-anchor-target>
 <p><strong>Facturación y Autogestión</strong> entra en acción una vez que un usuario decide suscribirse a uno o varios paquetes.</p>
 <p>A continuación se deja un diagrama de secuencia para entender el proceso de generación de futuras facturaciones.</p>
 <div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre class="mermaid w-full">sequenceDiagram
@@ -178,9 +184,12 @@
     A-&gt;&gt;S: ¡Hola, soy X y me quiero suscribir a estos paquetes!
     S-&gt;&gt;F: Che, quiero que le factures mes a mes estos paquetes al usuario 'X'</pre></div>
 <p>Una vez generada la carga de facturación mensual (registro del usuario en nuestro sistema), nuestro módulo permitirá:</p>
-<ul>
-<li><strong>Realizar pagos mensuales.</strong></li>
-</ul>
+<doc-anchor-target id="realizar-pagos-mensuales">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#realizar-pagos-mensuales">#</doc-anchor-trigger>
+        <span>Realizar pagos mensuales.</span>
+    </h3>
+</doc-anchor-target>
 <div class="flex mb-6">
     <div class="flex-shrink-0 w-1 rounded-tl rounded-bl bg-green-500"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -221,9 +230,12 @@
         </div>
     </div>
 </div>
-<ul>
-<li><strong>Suscribirse a nuevos paquetes.</strong></li>
-</ul>
+<doc-anchor-target id="suscribirse-a-nuevos-paquetes">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#suscribirse-a-nuevos-paquetes">#</doc-anchor-trigger>
+        <span>Suscribirse a nuevos paquetes.</span>
+    </h3>
+</doc-anchor-target>
 <div class="flex mb-6">
     <div class="flex-shrink-0 w-1 rounded-tl rounded-bl bg-gray-300 dark:bg-dark-250"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -245,9 +257,12 @@
         </div>
     </div>
 </div>
-<ul>
-<li><strong>Darse de baja de paquetes.</strong></li>
-</ul>
+<doc-anchor-target id="darse-de-baja-de-paquetes">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#darse-de-baja-de-paquetes">#</doc-anchor-trigger>
+        <span>Darse de baja de paquetes.</span>
+    </h3>
+</doc-anchor-target>
 <div class="flex mb-6">
     <div class="flex-shrink-0 w-1 rounded-tl rounded-bl bg-gray-300 dark:bg-dark-250"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -269,9 +284,12 @@
         </div>
     </div>
 </div>
-<ul>
-<li><strong>Modificar una suscripción.</strong></li>
-</ul>
+<doc-anchor-target id="modificar-una-suscripción">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#modificar-una-suscripción">#</doc-anchor-trigger>
+        <span>Modificar una suscripción.</span>
+    </h3>
+</doc-anchor-target>
 <div class="flex mb-6">
     <div class="flex-shrink-0 w-1 rounded-tl rounded-bl bg-gray-300 dark:bg-dark-250"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
