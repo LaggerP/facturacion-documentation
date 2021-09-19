@@ -4,6 +4,8 @@ icon: home
 ---
 # Facturación y Autogestión
 
+### Explicación inicial.
+
 **Facturación y Autogestión** entra en acción una vez que un usuario decide suscribirse a uno o varios paquetes. 
 
 A continuación se deja un diagrama de secuencia para entender el proceso de generación de futuras facturaciones.
@@ -19,7 +21,7 @@ sequenceDiagram
 
 Una vez generada la carga de facturación mensual (registro del usuario en nuestro sistema), nuestro módulo permitirá:
 
-- **Realizar pagos mensuales.**
+### Realizar pagos mensuales.
 !!!success Pago aceptado
 ```mermaid
 sequenceDiagram
@@ -38,7 +40,7 @@ sequenceDiagram
 ```
 !!!
 
-- **Suscribirse a nuevos paquetes.**
+### Suscribirse a nuevos paquetes.
 !!!light Nueva suscripción
 ```mermaid
 sequenceDiagram
@@ -48,7 +50,7 @@ sequenceDiagram
 ```
 !!!
 
-- **Darse de baja de paquetes.**
+### Darse de baja de paquetes.
 !!!light Baja
 ```mermaid
 sequenceDiagram
@@ -58,7 +60,7 @@ sequenceDiagram
 ```
 !!!
 
-- **Modificar una suscripción.**
+### Modificar una suscripción.
 !!!light Modificación
 ```mermaid
 sequenceDiagram

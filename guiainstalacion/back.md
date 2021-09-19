@@ -4,7 +4,7 @@ icon: triangle-right
 ---
 
 # Back End 
-### Última actualización: _10/10/2021_
+#### Última actualización: _10/10/2021_
 ___
 
 Clonar  [!button variant="info" target="blank" size="xs" text="repositorio Back End"](https://github.com/LaggerP/facturacion-back)
