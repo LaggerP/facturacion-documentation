@@ -9,24 +9,28 @@
     <!-- Primary Meta Tags -->
     <title>Endpoints</title>
     <meta name="title" content="Endpoints">
+    <meta name="description" content="Facturación y Autogestión (F&A)" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://laggerp.me/facturacion-documentation/guiauso/backend-endpoints/">
     <meta property="og:title" content="Endpoints">
+    <meta property="og:description" content="Facturación y Autogestión (F&A)">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://laggerp.me/facturacion-documentation/guiauso/backend-endpoints/">
     <meta property="twitter:title" content="Endpoints">
+    <meta property="twitter:description" content="Facturación y Autogestión (F&A)">
     
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("/facturacion-documentation/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="/facturacion-documentation/favicon.ico" rel="icon" />
-    <link href="/facturacion-documentation/resources/css/retype.css?v=1.9.685388258001" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/facturacion-documentation/resources/css/retype.css?v=1.9.685837083583" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/facturacion-documentation/resources/js/config.js?v=1.9.685388258001" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/facturacion-documentation/resources/js/config.js?v=1.9.685837083583" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/facturacion-documentation/resources/js/retype.js?v=1.9" defer data-turbo-track="reload"></script>
+    <script id="mermaid-js" type="text/javascript" src="/facturacion-documentation/resources/js/mermaid.js?v=1.9" defer></script>
 </head>
     <body>
         <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -43,7 +47,7 @@
             <div class="flex items-center px-2 md:px-6">
                 <a id="docs-site-logo" href="/facturacion-documentation/" class="flex items-center leading-snug text-xl">
                     <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">Facturación y Autogestión</span>
-                </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">v1.0.0</span>
+                </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">v1.0.1</span>
             </div>
 
             <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
@@ -165,6 +169,74 @@
         <span>Endpoints</span>
     </h1>
 </doc-anchor-target>
+<doc-anchor-target id="enpoints-del-módulo-de-facturación-y-autogestión">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#enpoints-del-módulo-de-facturación-y-autogestión">#</doc-anchor-trigger>
+        <span>Enpoints del módulo de facturación y autogestión</span>
+    </h3>
+</doc-anchor-target>
+<doc-panel id="badge-size-xl-variant-primary-text-get-obtener-facturas" collapsed>
+    <template #title><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-8 px-4 text-base rounded-md">
+    <span>GET</span>
+</span>  Obtener facturas</template>
+<div class="mb-6 overflow-hidden border rounded-md docs-columns dark:border-dark-650" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
+    <div class="flex items-center px-5 py-3 font-medium leading-snug text-gray-900 border-b border-gray-200 dark:border-dark-650 dark:text-white border-r">
+        <span>Módulo implicado</span>
+    </div>
+    <div class="flex items-center px-5 py-3 font-medium leading-snug text-gray-900 border-b border-gray-200 dark:border-dark-650 dark:text-white">
+        <span>Descripción</span>
+    </div>
+    <div class="px-5 py-3 docs-columns-content border-r border-gray-200 dark:border-dark-650">
+<p>Facturación y Autogestión (F&amp;A)</p>
+    </div>
+    <div class="px-5 py-3 docs-columns-content">
+<p>Se buscan todas las facturas pertenecientes a un usuario.</p>
+    </div>
+</div>
+<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-8 px-4 text-base rounded-md">
+    <span>GET</span>
+</span> <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-white bg-gray-700 dark:bg-dark-450 h-8 px-3 text-sm rounded-full">
+    <span>/bills/</span>
+</span></p>
+<div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre class="mermaid w-full">sequenceDiagram
+    F&amp;A-&gt;&gt;BD: GET all bills
+    alt Correct GET
+        BD-&gt;&gt;F&amp;A: {code: 200, data: {...}}
+    else Bad GET
+         BD-&gt;&gt;F&amp;A: {code: 500, data: &quot;ERROR-001&quot;, message: &quot;Error&quot;}
+    end</pre></div>
+</doc-panel>
+<doc-panel id="badge-size-xl-variant-primary-text-get-obtener-facturas-por-id" collapsed>
+    <template #title><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-8 px-4 text-base rounded-md">
+    <span>GET</span>
+</span>  Obtener facturas por id</template>
+<div class="mb-6 overflow-hidden border rounded-md docs-columns dark:border-dark-650" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
+    <div class="flex items-center px-5 py-3 font-medium leading-snug text-gray-900 border-b border-gray-200 dark:border-dark-650 dark:text-white border-r">
+        <span>Módulo implicado</span>
+    </div>
+    <div class="flex items-center px-5 py-3 font-medium leading-snug text-gray-900 border-b border-gray-200 dark:border-dark-650 dark:text-white">
+        <span>Descripción</span>
+    </div>
+    <div class="px-5 py-3 docs-columns-content border-r border-gray-200 dark:border-dark-650">
+<p>Facturación y Autogestión (F&amp;A)</p>
+    </div>
+    <div class="px-5 py-3 docs-columns-content">
+<p>Se buscan todas las facturas pertenecientes a un usuario por <strong>:billId</strong></p>
+    </div>
+</div>
+<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-8 px-4 text-base rounded-md">
+    <span>GET</span>
+</span> <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-white bg-gray-700 dark:bg-dark-450 h-8 px-3 text-sm rounded-full">
+    <span>/bills/:billId</span>
+</span></p>
+<div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre class="mermaid w-full">sequenceDiagram
+    F&amp;A-&gt;&gt;BD: GET by :billId
+    alt Correct GET
+        BD-&gt;&gt;F&amp;A: {code: 200, data: {...}}
+    else Bad GET
+         BD-&gt;&gt;F&amp;A: {code: 500, data: &quot;ERROR-001&quot;, message: &quot;Error&quot;}
+    end</pre></div>
+</doc-panel>
 
 
 
@@ -236,6 +308,6 @@
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "Endpoints", icon: "file", hasPrism: false, hasMermaid: false }</script>
+        <script>window.__DOCS__ = { "title": "Endpoints", icon: "file", hasPrism: false, hasMermaid: true }</script>
     </body>
 </html>
