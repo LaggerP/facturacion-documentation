@@ -26,11 +26,11 @@
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("/facturacion-documentation/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="/facturacion-documentation/favicon.ico" rel="icon" />
-    <link href="/facturacion-documentation/resources/css/retype.css?v=1.9.685837083583" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/facturacion-documentation/resources/css/retype.css?v=1.9.685944382621" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/facturacion-documentation/resources/js/config.js?v=1.9.685837083583" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/facturacion-documentation/resources/js/config.js?v=1.9.685944382621" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/facturacion-documentation/resources/js/retype.js?v=1.9" defer data-turbo-track="reload"></script>
-    <script id="prism-js" type="text/javascript" src="/facturacion-documentation/resources/js/prism.js?v=1.9.685837083583" defer></script>
+    <script id="prism-js" type="text/javascript" src="/facturacion-documentation/resources/js/prism.js?v=1.9.685944382621" defer></script>
     <script id="mermaid-js" type="text/javascript" src="/facturacion-documentation/resources/js/mermaid.js?v=1.9" defer></script>
 </head>
     <body>
@@ -48,7 +48,7 @@
             <div class="flex items-center px-2 md:px-6">
                 <a id="docs-site-logo" href="/facturacion-documentation/" class="flex items-center leading-snug text-xl">
                     <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">Facturación y Autogestión</span>
-                </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">v1.0.1</span>
+                </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">v1.0.2</span>
             </div>
 
             <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
@@ -219,27 +219,29 @@
 <p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-green-700 bg-green-100 h-8 px-3 text-sm rounded-md">
     <span>POST</span>
 </span> <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-8 px-3 text-sm rounded-md">
-    <span>ENDPOINT POR DEFINIR</span>
+    <span><a href="https://notflix-fya-backend.herokuapp.com/api/subscriptions/external/new">https://notflix-fya-backend.herokuapp.com/api/subscriptions/external/new</a></span>
 </span></p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-javascript"><code v-pre class="language-javascript">// Example request structure for new bill registration
+<pre class="language-javascript"><code v-pre class="language-javascript">// Example body request structure for new subscription registration
 
-let subscriptionData = {
-   userObjectId: &quot;507f1f77bcf86cd799439011&quot;, // ObjectId del usuario (debe ser el mismo que el de la base de datos de SSO).
-   firstName: &quot;John&quot;,
-   lastName: &quot;Doe&quot;,
-   email: &quot;john_doe@email.com&quot;,
-   telephone: &quot;123456789&quot;,
-   suscriptionId: &quot;123123&quot;, //ID de la suscripción. Proviene de la base de datos de Suscripciones. Necesario para hacer referencia a una suscripción la cual nos permitirá modificar, eliminar y dar aviso de pago.
-   packageData: [
-      {
-         id: 1, //ID del paquete contratado (debe ser el mismo que el de la base de datos de suscripciones).
-         price: 200
-      },
-      {
-         id: 2,
-         price: 200
-      }
+let payload = {
+   &quot;userObjectId&quot;: &quot;string&quot;, //objectId from SSO
+   &quot;firstName&quot;: &quot;string&quot;,
+   &quot;lastName&quot;: &quot;string&quot;,
+   &quot;email&quot;: &quot;string&quot;,
+   &quot;telephone&quot;: &quot;string&quot;,
+   &quot;subscriptionId&quot;: &quot;string&quot;,
+   &quot;packageData&quot;: [
+       {
+           &quot;id&quot;: 1,
+           &quot;name&quot;: &quot;string&quot;,
+           &quot;price&quot;: 200
+       },
+       {
+           &quot;id&quot;: 2,
+           &quot;name&quot;: &quot;string&quot;,
+           &quot;price&quot;: 200
+       }
    ]
 }</code></pre>
 </doc-codeblock></div>
@@ -248,7 +250,7 @@ let subscriptionData = {
     alt Correct register
         F&amp;A-&gt;&gt;Suscripciones: {code: 201, description: Correct register}
     else Bad register
-        F&amp;A-&gt;&gt;Suscripciones: {code: 400, description: Bad register, user has already been suscripted.}
+        F&amp;A-&gt;&gt;Suscripciones: {code: 400, description: Bad register, user has already been subscribed.}
     end
     opt Server error
         F&amp;A-&gt;&gt;Suscripciones: {code: 500, description: Server error}

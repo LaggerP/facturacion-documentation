@@ -26,10 +26,11 @@
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("/facturacion-documentation/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="/facturacion-documentation/favicon.ico" rel="icon" />
-    <link href="/facturacion-documentation/resources/css/retype.css?v=1.9.685837083583" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/facturacion-documentation/resources/css/retype.css?v=1.9.685944382621" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/facturacion-documentation/resources/js/config.js?v=1.9.685837083583" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/facturacion-documentation/resources/js/config.js?v=1.9.685944382621" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/facturacion-documentation/resources/js/retype.js?v=1.9" defer data-turbo-track="reload"></script>
+    <script id="prism-js" type="text/javascript" src="/facturacion-documentation/resources/js/prism.js?v=1.9.685944382621" defer></script>
     <script id="mermaid-js" type="text/javascript" src="/facturacion-documentation/resources/js/mermaid.js?v=1.9" defer></script>
 </head>
     <body>
@@ -47,7 +48,7 @@
             <div class="flex items-center px-2 md:px-6">
                 <a id="docs-site-logo" href="/facturacion-documentation/" class="flex items-center leading-snug text-xl">
                     <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">Facturación y Autogestión</span>
-                </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">v1.0.1</span>
+                </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">v1.0.2</span>
             </div>
 
             <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
@@ -169,16 +170,16 @@
         <span>Endpoints</span>
     </h1>
 </doc-anchor-target>
-<doc-anchor-target id="enpoints-del-módulo-de-facturación-y-autogestión">
+<doc-anchor-target id="endpoints-usuario">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#enpoints-del-módulo-de-facturación-y-autogestión">#</doc-anchor-trigger>
-        <span>Enpoints del módulo de facturación y autogestión</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#endpoints-usuario">#</doc-anchor-trigger>
+        <span>Endpoints usuario</span>
     </h3>
 </doc-anchor-target>
-<doc-panel id="badge-size-xl-variant-primary-text-get-obtener-facturas" collapsed>
+<doc-panel id="badge-size-xl-variant-primary-text-get-obtener-información-de-un-usuario-a-partir-de-token" collapsed>
     <template #title><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-8 px-4 text-base rounded-md">
     <span>GET</span>
-</span>  Obtener facturas</template>
+</span>  Obtener información de un usuario a partir de token</template>
 <div class="mb-6 overflow-hidden border rounded-md docs-columns dark:border-dark-650" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
     <div class="flex items-center px-5 py-3 font-medium leading-snug text-gray-900 border-b border-gray-200 dark:border-dark-650 dark:text-white border-r">
         <span>Módulo implicado</span>
@@ -190,26 +191,43 @@
 <p>Facturación y Autogestión (F&amp;A)</p>
     </div>
     <div class="px-5 py-3 docs-columns-content">
-<p>Se buscan todas las facturas pertenecientes a un usuario.</p>
+<p>Se busca la información básica de un usuario a partir del <strong>token</strong> suministrado por app web/mobile.
+Esto nos permitirá poder &quot;pintar&quot; la aplicación frontend.</p>
     </div>
 </div>
 <p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-8 px-4 text-base rounded-md">
     <span>GET</span>
-</span> <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-white bg-gray-700 dark:bg-dark-450 h-8 px-3 text-sm rounded-full">
-    <span>/bills/</span>
+</span> <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-8 px-3 text-sm rounded-full">
+    <span><a href="https://notflix-fya-backend.herokuapp.com/api/users/get-user-data">https://notflix-fya-backend.herokuapp.com/api/users/get-user-data</a></span>
 </span></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-javascript"><code v-pre class="language-javascript">// Example body request structure for get initial information from user
+
+let payload = {
+   &quot;token&quot;: &quot;string&quot;, // Token from web/mobile app
+   &quot;client&quot;: &quot;string&quot; // web | mobile
+}
+
+/* El payload del token provisto por la aplicación web/mobile
+ * debe poseer el objectId como parámetro como se muestra
+ * en el ejemplo:
+*/
+{
+    &quot;objectId&quot;: &quot;507f1f77bcf86cd99&quot;
+}</code></pre>
+</doc-codeblock></div>
 <div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre class="mermaid w-full">sequenceDiagram
-    F&amp;A-&gt;&gt;BD: GET all bills
+    F&amp;A-&gt;&gt;BD: GET user data by TOKEN
     alt Correct GET
         BD-&gt;&gt;F&amp;A: {code: 200, data: {...}}
     else Bad GET
          BD-&gt;&gt;F&amp;A: {code: 500, data: &quot;ERROR-001&quot;, message: &quot;Error&quot;}
     end</pre></div>
 </doc-panel>
-<doc-panel id="badge-size-xl-variant-primary-text-get-obtener-facturas-por-id" collapsed>
+<doc-panel id="badge-size-xl-variant-primary-text-get-obtener-información-de-un-usuario" collapsed>
     <template #title><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-8 px-4 text-base rounded-md">
     <span>GET</span>
-</span>  Obtener facturas por id</template>
+</span>  Obtener información de un usuario</template>
 <div class="mb-6 overflow-hidden border rounded-md docs-columns dark:border-dark-650" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
     <div class="flex items-center px-5 py-3 font-medium leading-snug text-gray-900 border-b border-gray-200 dark:border-dark-650 dark:text-white border-r">
         <span>Módulo implicado</span>
@@ -221,13 +239,160 @@
 <p>Facturación y Autogestión (F&amp;A)</p>
     </div>
     <div class="px-5 py-3 docs-columns-content">
-<p>Se buscan todas las facturas pertenecientes a un usuario por <strong>:billId</strong></p>
+<p>Se busca la información básica de un usuario a partir del <strong>:userId</strong>.</p>
     </div>
 </div>
 <p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-8 px-4 text-base rounded-md">
     <span>GET</span>
-</span> <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-white bg-gray-700 dark:bg-dark-450 h-8 px-3 text-sm rounded-full">
-    <span>/bills/:billId</span>
+</span> <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-8 px-3 text-sm rounded-full">
+    <span><a href="https://notflix-fya-backend.herokuapp.com/api/users/:userId">https://notflix-fya-backend.herokuapp.com/api/users/:userId</a></span>
+</span></p>
+<div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre class="mermaid w-full">sequenceDiagram
+    F&amp;A-&gt;&gt;BD: GET  by :userId
+    alt Correct GET
+        BD-&gt;&gt;F&amp;A: {code: 200, data: {...}}
+    else Bad GET
+         BD-&gt;&gt;F&amp;A: {code: 500, data: &quot;ERROR-001&quot;, message: &quot;Error&quot;}
+    end</pre></div>
+</doc-panel>
+<doc-anchor-target id="endpoints-suscripciones">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#endpoints-suscripciones">#</doc-anchor-trigger>
+        <span>Endpoints suscripciones</span>
+    </h3>
+</doc-anchor-target>
+<doc-panel id="badge-size-xl-variant-primary-text-get-obtener-suscripciones-de-un-usuario" collapsed>
+    <template #title><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-8 px-4 text-base rounded-md">
+    <span>GET</span>
+</span>  Obtener suscripciones de un usuario</template>
+<div class="mb-6 overflow-hidden border rounded-md docs-columns dark:border-dark-650" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
+    <div class="flex items-center px-5 py-3 font-medium leading-snug text-gray-900 border-b border-gray-200 dark:border-dark-650 dark:text-white border-r">
+        <span>Módulo implicado</span>
+    </div>
+    <div class="flex items-center px-5 py-3 font-medium leading-snug text-gray-900 border-b border-gray-200 dark:border-dark-650 dark:text-white">
+        <span>Descripción</span>
+    </div>
+    <div class="px-5 py-3 docs-columns-content border-r border-gray-200 dark:border-dark-650">
+<p>Facturación y Autogestión (F&amp;A)</p>
+    </div>
+    <div class="px-5 py-3 docs-columns-content">
+<p>Se buscan todas las suscripciones pertenecientes a un usuario a partir de su <strong>:userId</strong>.</p>
+    </div>
+</div>
+<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-8 px-4 text-base rounded-md">
+    <span>GET</span>
+</span> <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-8 px-3 text-sm rounded-full">
+    <span><a href="https://notflix-fya-backend.herokuapp.com/api/subscriptions/:userId">https://notflix-fya-backend.herokuapp.com/api/subscriptions/:userId</a></span>
+</span></p>
+<div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre class="mermaid w-full">sequenceDiagram
+    F&amp;A-&gt;&gt;BD: GET all bills by :userId
+    alt Correct GET
+        BD-&gt;&gt;F&amp;A: {code: 200, data: {...}}
+    else Bad GET
+         BD-&gt;&gt;F&amp;A: {code: 500, data: &quot;ERROR-001&quot;, message: &quot;Error&quot;}
+    end</pre></div>
+</doc-panel>
+<doc-panel id="badge-size-xl-variant-success-text-post-registrar-nueva-suscripción" collapsed>
+    <template #title><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-green-700 bg-green-100 h-8 px-4 text-base rounded-md">
+    <span>POST</span>
+</span>  Registrar nueva suscripción</template>
+<div class="mb-6 overflow-hidden border rounded-md docs-columns dark:border-dark-650" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
+    <div class="flex items-center px-5 py-3 font-medium leading-snug text-gray-900 border-b border-gray-200 dark:border-dark-650 dark:text-white border-r">
+        <span>Módulo implicado</span>
+    </div>
+    <div class="flex items-center px-5 py-3 font-medium leading-snug text-gray-900 border-b border-gray-200 dark:border-dark-650 dark:text-white">
+        <span>Descripción</span>
+    </div>
+    <div class="px-5 py-3 docs-columns-content border-r border-gray-200 dark:border-dark-650">
+<p>Facturación y Autogestión (F&amp;A)</p>
+    </div>
+    <div class="px-5 py-3 docs-columns-content">
+<p>Se realiza el registro a un nuevo paquete.</p>
+    </div>
+</div>
+<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-green-700 bg-green-100 h-8 px-4 text-base rounded-md">
+    <span>POST</span>
+</span> <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-8 px-3 text-sm rounded-full">
+    <span><a href="https://notflix-fya-backend.herokuapp.com/api/subscriptions/internal">https://notflix-fya-backend.herokuapp.com/api/subscriptions/internal</a></span>
+</span></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-javascript"><code v-pre class="language-javascript">// Example body request structure for new subscription registration
+
+let payload = {
+    &quot;userId&quot;: 1,
+    &quot;name&quot;: &quot;string&quot;,
+    &quot;subscriptionId&quot;: 1,
+    &quot;packageId&quot;: 4,
+    &quot;cost&quot;: 300
+}</code></pre>
+</doc-codeblock></div>
+<div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre class="mermaid w-full">sequenceDiagram
+    F&amp;A-&gt;&gt;BD: POST by :userId
+    alt Correct GET
+        BD-&gt;&gt;F&amp;A: {code: 201, data: {...}}
+    else Bad GET
+         BD-&gt;&gt;F&amp;A: {code: 404, data: &quot;Cannot create invoice because userId doesn't exist&quot;}
+    end</pre></div>
+</doc-panel>
+<doc-anchor-target id="endpoints-facturas">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#endpoints-facturas">#</doc-anchor-trigger>
+        <span>Endpoints facturas</span>
+    </h3>
+</doc-anchor-target>
+<doc-panel id="badge-size-xl-variant-primary-text-get-obtener-facturas-de-un-usuario" collapsed>
+    <template #title><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-8 px-4 text-base rounded-md">
+    <span>GET</span>
+</span>  Obtener facturas de un usuario</template>
+<div class="mb-6 overflow-hidden border rounded-md docs-columns dark:border-dark-650" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
+    <div class="flex items-center px-5 py-3 font-medium leading-snug text-gray-900 border-b border-gray-200 dark:border-dark-650 dark:text-white border-r">
+        <span>Módulo implicado</span>
+    </div>
+    <div class="flex items-center px-5 py-3 font-medium leading-snug text-gray-900 border-b border-gray-200 dark:border-dark-650 dark:text-white">
+        <span>Descripción</span>
+    </div>
+    <div class="px-5 py-3 docs-columns-content border-r border-gray-200 dark:border-dark-650">
+<p>Facturación y Autogestión (F&amp;A)</p>
+    </div>
+    <div class="px-5 py-3 docs-columns-content">
+<p>Se buscan todas las facturas pertenecientes a un usuario a partir de su <strong>:userId</strong>.</p>
+    </div>
+</div>
+<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-8 px-4 text-base rounded-md">
+    <span>GET</span>
+</span> <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-8 px-3 text-sm rounded-full">
+    <span><a href="https://notflix-fya-backend.herokuapp.com/api/invoices/:userId">https://notflix-fya-backend.herokuapp.com/api/invoices/:userId</a></span>
+</span></p>
+<div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre class="mermaid w-full">sequenceDiagram
+    F&amp;A-&gt;&gt;BD: GET all bills by :userId
+    alt Correct GET
+        BD-&gt;&gt;F&amp;A: {code: 200, data: {...}}
+    else Bad GET
+         BD-&gt;&gt;F&amp;A: {code: 500, data: &quot;ERROR-001&quot;, message: &quot;Error&quot;}
+    end</pre></div>
+</doc-panel>
+<doc-panel id="badge-size-xl-variant-primary-text-get-obtener-factura-por-id-de-factura" collapsed>
+    <template #title><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-8 px-4 text-base rounded-md">
+    <span>GET</span>
+</span>  Obtener factura por id de factura</template>
+<div class="mb-6 overflow-hidden border rounded-md docs-columns dark:border-dark-650" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
+    <div class="flex items-center px-5 py-3 font-medium leading-snug text-gray-900 border-b border-gray-200 dark:border-dark-650 dark:text-white border-r">
+        <span>Módulo implicado</span>
+    </div>
+    <div class="flex items-center px-5 py-3 font-medium leading-snug text-gray-900 border-b border-gray-200 dark:border-dark-650 dark:text-white">
+        <span>Descripción</span>
+    </div>
+    <div class="px-5 py-3 docs-columns-content border-r border-gray-200 dark:border-dark-650">
+<p>Facturación y Autogestión (F&amp;A)</p>
+    </div>
+    <div class="px-5 py-3 docs-columns-content">
+<p>Se obtiene factura pertenecientes a un usuario a partir de su <strong>:billId</strong></p>
+    </div>
+</div>
+<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-8 px-4 text-base rounded-md">
+    <span>GET</span>
+</span> <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-8 px-3 text-sm rounded-full">
+    <span><a href="https://notflix-fya-backend.herokuapp.com/api/invoices/:userId/:billId">https://notflix-fya-backend.herokuapp.com/api/invoices/:userId/:billId</a></span>
 </span></p>
 <div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre class="mermaid w-full">sequenceDiagram
     F&amp;A-&gt;&gt;BD: GET by :billId
@@ -235,6 +400,37 @@
         BD-&gt;&gt;F&amp;A: {code: 200, data: {...}}
     else Bad GET
          BD-&gt;&gt;F&amp;A: {code: 500, data: &quot;ERROR-001&quot;, message: &quot;Error&quot;}
+    end</pre></div>
+</doc-panel>
+<doc-panel id="badge-size-xl-variant-success-text-post-generar-un-nuevo-pago" collapsed>
+    <template #title><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-green-700 bg-green-100 h-8 px-4 text-base rounded-md">
+    <span>POST</span>
+</span>  Generar un nuevo pago</template>
+<div class="mb-6 overflow-hidden border rounded-md docs-columns dark:border-dark-650" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
+    <div class="flex items-center px-5 py-3 font-medium leading-snug text-gray-900 border-b border-gray-200 dark:border-dark-650 dark:text-white border-r">
+        <span>Módulo implicado</span>
+    </div>
+    <div class="flex items-center px-5 py-3 font-medium leading-snug text-gray-900 border-b border-gray-200 dark:border-dark-650 dark:text-white">
+        <span>Descripción</span>
+    </div>
+    <div class="px-5 py-3 docs-columns-content border-r border-gray-200 dark:border-dark-650">
+<p>Facturación y Autogestión (F&amp;A)</p>
+    </div>
+    <div class="px-5 py-3 docs-columns-content">
+<p>Se realiza la facturación de todas las suscripciones del mes (30 dias) a partir de un <strong>:userId</strong></p>
+    </div>
+</div>
+<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-green-700 bg-green-100 h-8 px-4 text-base rounded-md">
+    <span>GET</span>
+</span> <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-8 px-3 text-sm rounded-full">
+    <span><a href="https://notflix-fya-backend.herokuapp.com/api/invoices/:userId/new-paid">https://notflix-fya-backend.herokuapp.com/api/invoices/:userId/new-paid</a></span>
+</span></p>
+<div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre class="mermaid w-full">sequenceDiagram
+    F&amp;A-&gt;&gt;BD: POST payload
+    alt Correct GET
+        BD-&gt;&gt;F&amp;A: {code: 201, data: {...}}
+    else Bad GET
+         BD-&gt;&gt;F&amp;A: {code: 404, data: &quot;Cannot create invoice because userId doesn't exist&quot;}
     end</pre></div>
 </doc-panel>
 
@@ -308,6 +504,6 @@
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "Endpoints", icon: "file", hasPrism: false, hasMermaid: true }</script>
+        <script>window.__DOCS__ = { "title": "Endpoints", icon: "file", hasPrism: true, hasMermaid: true }</script>
     </body>
 </html>
