@@ -30,9 +30,9 @@ Facturación y Autogestión (F&A)
 Nuevo registro de paquete(s) y usuario en el sistema de F&A
 |||
 
-[!badge size="l" variant="success" text="POST"] [!badge size="l" variant="secondary" text="ENDPOINT POR DEFINIR"]
+[!badge size="l" variant="success" text="POST"] [!badge size="l" variant="secondary" text="https://notflix-fya-backend.herokuapp.com/api/subscriptions/external/new"]
 
-:::code source="../static/subscriptionData.js" :::
+:::code source="../static/externalSubscriptionData.js" :::
 
 ```mermaid
 sequenceDiagram
@@ -40,7 +40,7 @@ sequenceDiagram
     alt Correct register
         F&A->>Suscripciones: {code: 201, description: Correct register}
     else Bad register
-        F&A->>Suscripciones: {code: 400, description: Bad register, user has already been suscripted.}
+        F&A->>Suscripciones: {code: 400, description: Bad register, user has already been subscribed.}
     end
     opt Server error
         F&A->>Suscripciones: {code: 500, description: Server error}
