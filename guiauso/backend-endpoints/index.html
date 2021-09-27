@@ -26,11 +26,11 @@
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("/facturacion-documentation/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="/facturacion-documentation/favicon.ico" rel="icon" />
-    <link href="/facturacion-documentation/resources/css/retype.css?v=1.9.685944382621" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/facturacion-documentation/resources/css/retype.css?v=1.9.686017660870" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/facturacion-documentation/resources/js/config.js?v=1.9.685944382621" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/facturacion-documentation/resources/js/config.js?v=1.9.686017660870" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/facturacion-documentation/resources/js/retype.js?v=1.9" defer data-turbo-track="reload"></script>
-    <script id="prism-js" type="text/javascript" src="/facturacion-documentation/resources/js/prism.js?v=1.9.685944382621" defer></script>
+    <script id="prism-js" type="text/javascript" src="/facturacion-documentation/resources/js/prism.js?v=1.9.686017660870" defer></script>
     <script id="mermaid-js" type="text/javascript" src="/facturacion-documentation/resources/js/mermaid.js?v=1.9" defer></script>
 </head>
     <body>
@@ -191,31 +191,16 @@
 <p>Facturación y Autogestión (F&amp;A)</p>
     </div>
     <div class="px-5 py-3 docs-columns-content">
-<p>Se busca la información básica de un usuario a partir del <strong>token</strong> suministrado por app web/mobile.
-Esto nos permitirá poder &quot;pintar&quot; la aplicación frontend.</p>
+<p>Se busca la información básica de un usuario a partir del <strong>token</strong> suministrado por app <strong>web/mobile</strong>.
+Esto nos permitirá poder &quot;pintar&quot; la aplicación frontend.
+<strong>:from</strong> puede tomar el valor de <code v-pre>web</code> o <code v-pre>mobile</code> y <strong>:token</strong> el token de la app cliente.</p>
     </div>
 </div>
 <p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-8 px-4 text-base rounded-md">
     <span>GET</span>
 </span> <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-8 px-3 text-sm rounded-full">
-    <span><a href="https://notflix-fya-backend.herokuapp.com/api/users/get-user-data">https://notflix-fya-backend.herokuapp.com/api/users/get-user-data</a></span>
+    <span><a href="https://notflix-fya-backend.herokuapp.com/api/users/:from/:token">https://notflix-fya-backend.herokuapp.com/api/users/:from/:token</a></span>
 </span></p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-javascript"><code v-pre class="language-javascript">// Example body request structure for get initial information from user
-
-let payload = {
-   &quot;token&quot;: &quot;string&quot;, // Token from web/mobile app
-   &quot;client&quot;: &quot;string&quot; // web | mobile
-}
-
-/* El payload del token provisto por la aplicación web/mobile
- * debe poseer el objectId como parámetro como se muestra
- * en el ejemplo:
-*/
-{
-    &quot;objectId&quot;: &quot;507f1f77bcf86cd99&quot;
-}</code></pre>
-</doc-codeblock></div>
 <div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre class="mermaid w-full">sequenceDiagram
     F&amp;A-&gt;&gt;BD: GET user data by TOKEN
     alt Correct GET
@@ -320,6 +305,7 @@ let payload = {
 
 let payload = {
     &quot;userId&quot;: 1,
+    &quot;email&quot;:&quot;string&quot;, //email del usuario
     &quot;name&quot;: &quot;string&quot;,
     &quot;subscriptionId&quot;: 1,
     &quot;packageId&quot;: 4,

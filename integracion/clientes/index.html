@@ -26,9 +26,9 @@
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("/facturacion-documentation/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="/facturacion-documentation/favicon.ico" rel="icon" />
-    <link href="/facturacion-documentation/resources/css/retype.css?v=1.9.685944382621" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/facturacion-documentation/resources/css/retype.css?v=1.9.686017660870" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/facturacion-documentation/resources/js/config.js?v=1.9.685944382621" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/facturacion-documentation/resources/js/config.js?v=1.9.686017660870" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/facturacion-documentation/resources/js/retype.js?v=1.9" defer data-turbo-track="reload"></script>
     <script id="mermaid-js" type="text/javascript" src="/facturacion-documentation/resources/js/mermaid.js?v=1.9" defer></script>
 </head>
@@ -173,9 +173,21 @@
 <div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre class="mermaid w-full">sequenceDiagram
     participant A as Aplicación cliente
     participant F as Facturación y Autogestión
-    A-&gt;&gt;F: Acceso aplicación de F&amp;A Cliente.
- 
-</pre></div>
+    participant BD as Base de datos
+    A-&gt;&gt;F: /:web/:token Acceso aplicación de F&amp;A Cliente.
+    F-&gt;&gt;BD: /:web/:token GET información del usuario.
+    BD-&gt;&gt;F: Información del usuario</pre></div>
+<doc-anchor-target id="funcionalidad">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#funcionalidad">#</doc-anchor-trigger>
+        <span>Funcionalidad</span>
+    </h3>
+</doc-anchor-target>
+<p>Cuando el cliente quiera ingresar al módulo de <strong>Facturación y Autogestión</strong> deberá proveer en la url de redirección 2(dos) parámetros opcionales: plataforma de origen (<strong>web</strong> o <strong>mobile</strong>) y el <strong>token</strong></p>
+<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-8 px-4 text-base rounded-full">
+    <span><a href="https://facturacion-front.vercel.app/?from=**from**&amp;token=**token*">https://facturacion-front.vercel.app/?from=**from**&amp;token=**token*</a>*</span>
+</span></p>
+<p>En donde <strong>from</strong> puede ser <code v-pre>web</code> o <code v-pre>mobile</code> y <strong>token</strong> el token del cliente.</p>
 
 
 
