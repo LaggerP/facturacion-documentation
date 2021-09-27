@@ -2,6 +2,7 @@
 
 let payload = {
     "userId": 1,
+    "email":"string", //email del usuario
     "name": "string",
     "subscriptionId": 1,
     "packageId": 4,

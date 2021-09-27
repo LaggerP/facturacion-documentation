@@ -11,14 +11,14 @@ icon: gear
 ||| Módulo implicado
 Facturación y Autogestión (F&A)
 ||| Descripción
-Se busca la información básica de un usuario a partir del **token** suministrado por app web/mobile.
+Se busca la información básica de un usuario a partir del **token** suministrado por app **web/mobile**.
 Esto nos permitirá poder "pintar" la aplicación frontend.
+**:from** puede tomar el valor de `web` o `mobile` y **:token** el token de la app cliente.
 |||
 
 
-[!badge size="xl" variant="primary " text="GET"] [!badge corners="pill" size="l" variant="info" text="https://notflix-fya-backend.herokuapp.com/api/users/get-user-data"]
+[!badge size="xl" variant="primary " text="GET"] [!badge corners="pill" size="l" variant="info" text="https://notflix-fya-backend.herokuapp.com/api/users/:from/:token"]
 
-:::code source="../static/getDataByAppToken.js" :::
 
 ```mermaid
 sequenceDiagram
