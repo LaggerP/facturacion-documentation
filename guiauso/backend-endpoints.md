@@ -165,7 +165,7 @@ Se realiza la facturación de todas las suscripciones del mes (30 dias) a partir
 |||
 
 
-[!badge size="xl" variant="success " text="GET"] [!badge corners="pill" size="l" variant="info" text="https://notflix-fya-backend.herokuapp.com/api/invoices/:userId/new-paid"]
+[!badge size="xl" variant="success " text="POST"] [!badge corners="pill" size="l" variant="info" text="https://notflix-fya-backend.herokuapp.com/api/invoices/:userId/new-paid"]
 
 
 ```mermaid
