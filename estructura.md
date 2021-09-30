@@ -8,7 +8,7 @@ order: 100
 ![Comunicación entre partes](/static/tecnologiasProyecto.png)
 
 
-### DER
+### Diagrama de la Base de Datos
 
-![Estructura de la base de datos](/static/bdStructure.png)
+![Estructura de la base de datos](/static/diagramaDER–fya.png)
 

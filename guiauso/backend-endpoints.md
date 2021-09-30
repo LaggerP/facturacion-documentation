@@ -165,7 +165,7 @@ Se realiza la facturación de todas las suscripciones del mes (30 dias) a partir
 |||
 
 
-[!badge size="xl" variant="success " text="GET"] [!badge corners="pill" size="l" variant="info" text="https://notflix-fya-backend.herokuapp.com/api/invoices/:userId/new-paid"]
+[!badge size="xl" variant="success " text="POST"] [!badge corners="pill" size="l" variant="info" text="https://notflix-fya-backend.herokuapp.com/api/invoices/:userId/new-paid"]
 
 
 ```mermaid
@@ -173,6 +173,29 @@ sequenceDiagram
     F&A->>BD: POST payload
     alt Correct GET
         BD->>F&A: {code: 201, data: {...}}
+    else Bad GET
+         BD->>F&A: {code: 404, data: "Cannot create invoice because userId doesn't exist"}
+    end
+```
+===
+
+==- [!badge size="xl" variant="success" text="POST"]  Generar un nuevo pago con estado NO_PAGADO
+
+||| Módulo implicado
+Facturación y Autogestión (F&A)
+||| Descripción
+Se simula el NO pago de una suscripción a partir de un **:userId** y **:subscriptionId**
+|||
+
+
+[!badge size="xl" variant="success " text="POST"] [!badge corners="pill" size="l" variant="info" text="https://notflix-fya-backend.herokuapp.com/api/invoices/:userId/:subscriptionId/non-paid"]
+
+
+```mermaid
+sequenceDiagram
+    F&A->>BD: POST payload
+    alt Correct GET
+        BD->>F&A: {code: 200, data: {...}}
     else Bad GET
          BD->>F&A: {code: 404, data: "Cannot create invoice because userId doesn't exist"}
     end

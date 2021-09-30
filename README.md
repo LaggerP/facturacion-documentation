@@ -6,20 +6,21 @@ icon: home
 
 ### Explicación inicial.
 
-**Facturación y Autogestión** entra en acción una vez que un usuario decide suscribirse a uno o varios paquetes. 
+**Facturación y Autogestión** entra en acción una vez que un usuario se suscribe a uno o varios paquetes. 
 
 A continuación se deja un diagrama de secuencia para entender el proceso de generación de futuras facturaciones.
 
 ```mermaid
 sequenceDiagram
-    participant A as Aplicación
+    participant A as Web/Mobile
     participant S as Suscripción
     participant F as Facturación y Autogestión
     A->>S: ¡Hola, soy X y me quiero suscribir a estos paquetes!
     S->>F: Che, quiero que le factures mes a mes estos paquetes al usuario 'X'
+    F->>S: ¡Ok!, le cobro todos los meses esta suscripción mientras esté activa.
 ```
 
-Una vez generada la carga de facturación mensual (registro del usuario en nuestro sistema), nuestro módulo permitirá:
+**Una vez generada la carga de facturación mensual (registro del usuario en nuestro sistema), nuestro módulo permitirá:**
 
 ### Realizar pagos mensuales.
 !!!success Pago aceptado

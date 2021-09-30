@@ -100,7 +100,7 @@ Suscripciones
 Se notifica el o no pago de una suscripcion. Se modifica el estado de la tabla de suscripciones
 |||
 
-[!badge size="l" variant="warning" text="PUT"] [!badge size="l" variant="secondary" text="ENDPOINT POR DEFINIR"]
+[!badge size="l" variant="warning" text="PUT"] [!badge size="l" variant="secondary" text="Realizado al pagar una suscripción"]
 
 
 :::code source="../static/payData.js" :::
