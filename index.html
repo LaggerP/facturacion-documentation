@@ -9,26 +9,26 @@
     <!-- Primary Meta Tags -->
     <title>Facturaci&#243;n y Autogesti&#243;n</title>
     <meta name="title" content="Facturación y Autogestión">
-    <meta name="description" content="Facturación y Autogestión entra en acción una vez que un usuario decide suscribirse a uno o varios paquetes." />
+    <meta name="description" content="Facturación y Autogestión entra en acción una vez que un usuario se suscribe a uno o varios paquetes." />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://laggerp.me/facturacion-documentation/">
     <meta property="og:title" content="Facturación y Autogestión">
-    <meta property="og:description" content="Facturación y Autogestión entra en acción una vez que un usuario decide suscribirse a uno o varios paquetes.">
+    <meta property="og:description" content="Facturación y Autogestión entra en acción una vez que un usuario se suscribe a uno o varios paquetes.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://laggerp.me/facturacion-documentation/">
     <meta property="twitter:title" content="Facturación y Autogestión">
-    <meta property="twitter:description" content="Facturación y Autogestión entra en acción una vez que un usuario decide suscribirse a uno o varios paquetes.">
+    <meta property="twitter:description" content="Facturación y Autogestión entra en acción una vez que un usuario se suscribe a uno o varios paquetes.">
     
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("/facturacion-documentation/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="/facturacion-documentation/favicon.ico" rel="icon" />
-    <link href="/facturacion-documentation/resources/css/retype.css?v=1.9.686060072647" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/facturacion-documentation/resources/css/retype.css?v=1.9.686285970054" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/facturacion-documentation/resources/js/config.js?v=1.9.686060072647" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/facturacion-documentation/resources/js/config.js?v=1.9.686285970054" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/facturacion-documentation/resources/js/retype.js?v=1.9" defer data-turbo-track="reload"></script>
     <script id="mermaid-js" type="text/javascript" src="/facturacion-documentation/resources/js/mermaid.js?v=1.9" defer></script>
 </head>
@@ -175,15 +175,16 @@
         <span>Explicación inicial.</span>
     </h3>
 </doc-anchor-target>
-<p><strong>Facturación y Autogestión</strong> entra en acción una vez que un usuario decide suscribirse a uno o varios paquetes.</p>
+<p><strong>Facturación y Autogestión</strong> entra en acción una vez que un usuario se suscribe a uno o varios paquetes.</p>
 <p>A continuación se deja un diagrama de secuencia para entender el proceso de generación de futuras facturaciones.</p>
 <div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre class="mermaid w-full">sequenceDiagram
-    participant A as Aplicación
+    participant A as Web/Mobile
     participant S as Suscripción
     participant F as Facturación y Autogestión
     A-&gt;&gt;S: ¡Hola, soy X y me quiero suscribir a estos paquetes!
-    S-&gt;&gt;F: Che, quiero que le factures mes a mes estos paquetes al usuario 'X'</pre></div>
-<p>Una vez generada la carga de facturación mensual (registro del usuario en nuestro sistema), nuestro módulo permitirá:</p>
+    S-&gt;&gt;F: Che, quiero que le factures mes a mes estos paquetes al usuario 'X'
+    F-&gt;&gt;S: ¡Ok!, le cobro todos los meses esta suscripción mientras esté activa.</pre></div>
+<p><strong>Una vez generada la carga de facturación mensual (registro del usuario en nuestro sistema), nuestro módulo permitirá:</strong></p>
 <doc-anchor-target id="realizar-pagos-mensuales">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#realizar-pagos-mensuales">#</doc-anchor-trigger>

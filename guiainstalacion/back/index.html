@@ -9,26 +9,26 @@
     <!-- Primary Meta Tags -->
     <title>Back End</title>
     <meta name="title" content="Back End">
-    <meta name="description" content="Clonar" />
+    <meta name="description" content="$ npm install" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://laggerp.me/facturacion-documentation/guiainstalacion/back/">
     <meta property="og:title" content="Back End">
-    <meta property="og:description" content="Clonar">
+    <meta property="og:description" content="$ npm install">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://laggerp.me/facturacion-documentation/guiainstalacion/back/">
     <meta property="twitter:title" content="Back End">
-    <meta property="twitter:description" content="Clonar">
+    <meta property="twitter:description" content="$ npm install">
     
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("/facturacion-documentation/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="/facturacion-documentation/favicon.ico" rel="icon" />
-    <link href="/facturacion-documentation/resources/css/retype.css?v=1.9.686060072647" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/facturacion-documentation/resources/css/retype.css?v=1.9.686285970054" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/facturacion-documentation/resources/js/config.js?v=1.9.686060072647" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/facturacion-documentation/resources/js/config.js?v=1.9.686285970054" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/facturacion-documentation/resources/js/retype.js?v=1.9" defer data-turbo-track="reload"></script>
 </head>
     <body>
@@ -168,16 +168,12 @@
         <span>Back End</span>
     </h1>
 </doc-anchor-target>
-<doc-anchor-target id="última-actualización-10102021">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#última-actualización-10102021">#</doc-anchor-trigger>
-        <span>Última actualización: <em>10/10/2021</em></span>
-    </h4>
+<doc-anchor-target id="última-actualización-25092021">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#última-actualización-25092021">#</doc-anchor-trigger>
+        <span>Última actualización: <em>25/09/2021</em></span>
+    </h3>
 </doc-anchor-target>
-<hr />
-<p>Clonar  <a href="https://github.com/LaggerP/facturacion-back" target="_blank" class="no-link inline-flex items-center font-medium cursor-pointer transition-colors duration-200 ease-out focus:outline-none bg-blue-100 hover:bg-blue-200 text-blue-600 px-2.5 h-6 text-xs rounded">
-    <span>repositorio Back End</span>
-</a></p>
 <hr />
 <doc-anchor-target id="instalación-dependencias-del-proyecto">
     <h4>
@@ -194,18 +190,49 @@
     </h4>
 </doc-anchor-target>
 <p>Para hacer uso completo de la aplicación de forma local es necesario tener una BD MySQL corriendo bajo el puerto 3306.</p>
+<doc-anchor-target id="comando-docker-para-crear-imagen-mysql">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#comando-docker-para-crear-imagen-mysql">#</doc-anchor-trigger>
+        <span>Comando Docker para crear imagen MySQL:</span>
+    </h4>
+</doc-anchor-target>
+<p><code v-pre>docker run -p 3306:3306 --name tu_DB_local_DB -e MYSQL_ROOT_PASSWORD=tu_DB_local_PASS -d mysql</code></p>
+<hr />
 <p>Crear un archivo <code v-pre>.env</code> con las siguientes variables de entorno:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none"> DEV=true
- AUTH_SECRET=tuSecretAuth
- AUTH_EXPIRES=1d
- AUTH_ROUNDS=10
+<pre class="language-none"><code v-pre class="language-none"> DEV=true //true si el ambiente es local/desarrollo
+ FyA_AUTH_SECRET=tuSecretAuth
+ FyA_AUTH_EXPIRES=1d
+ FyA_AUTH_ROUNDS=10
+ FyA_EMAIL_USER=tuUserEmail
+ FyA_EMAIL_PASS=tuPasswordEmail
+ FyA_EMAIL_SMTP=tuSMTP
+ SECRET_SSO_FyA_JWT=tokenSuministradoPorSSO
+ SECRET_MOBILE_JWT=secretDeMobile
+ SECRET_WEB_JWT=secretDeWeb
  DEV_DB_HOST=localhost
  PROD_DB_PORT=3306
  DEV_DB_USER=tu_DB_local_USER
  DEV_DB_PASS=tu_DB_local_PASS
  DEV_DB_DB=tu_DB_local_DB</code></pre>
 </doc-codeblock></div>
+<hr />
+<doc-anchor-target id="cómo-correr-el-proyecto">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#cómo-correr-el-proyecto">#</doc-anchor-trigger>
+        <span>¿Cómo correr el proyecto?</span>
+    </h4>
+</doc-anchor-target>
+<p>Para correr el proyecto es necesario tener una base de datos MySQL activa. Al correr el comando <code v-pre>node server.js</code> se
+crearán las tablas en la BD (si es que aún no existen).</p>
+<hr />
+<doc-anchor-target id="endpoints">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#endpoints">#</doc-anchor-trigger>
+        <span>Endpoints:</span>
+    </h4>
+</doc-anchor-target>
+<hr />
 
 
 
