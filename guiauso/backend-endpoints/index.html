@@ -26,12 +26,12 @@
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("/facturacion-documentation/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="/facturacion-documentation/favicon.ico" rel="icon" />
-    <link href="/facturacion-documentation/resources/css/retype.css?v=1.9.686285970054" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/facturacion-documentation/resources/css/retype.css?v=1.10.686375593361" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/facturacion-documentation/resources/js/config.js?v=1.9.686285970054" defer data-turbo-track="reload"></script>
-    <script type="text/javascript" src="/facturacion-documentation/resources/js/retype.js?v=1.9" defer data-turbo-track="reload"></script>
-    <script id="prism-js" type="text/javascript" src="/facturacion-documentation/resources/js/prism.js?v=1.9.686285970054" defer></script>
-    <script id="mermaid-js" type="text/javascript" src="/facturacion-documentation/resources/js/mermaid.js?v=1.9" defer></script>
+    <script type="text/javascript" src="/facturacion-documentation/resources/js/config.js?v=1.10.686375593361" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/facturacion-documentation/resources/js/retype.js?v=1.10" defer data-turbo-track="reload"></script>
+    <script id="prism-js" type="text/javascript" src="/facturacion-documentation/resources/js/prism.js?v=1.10.686375593361" defer></script>
+    <script id="mermaid-js" type="text/javascript" src="/facturacion-documentation/resources/js/mermaid.js?v=1.10" defer></script>
 </head>
     <body>
         <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -314,20 +314,52 @@ let payload = {
 </doc-codeblock></div>
 <div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre class="mermaid w-full">sequenceDiagram
     F&amp;A-&gt;&gt;BD: POST by :userId
-    alt Correct GET
+    alt Correct POST
         BD-&gt;&gt;F&amp;A: {code: 201, data: {...}}
-    else Bad GET
+    else Bad POST
          BD-&gt;&gt;F&amp;A: {code: 404, data: &quot;Cannot create invoice because userId doesn't exist&quot;}
     end</pre></div>
 </doc-panel>
+<doc-panels>
+   <doc-panel id="badge-size-xl-variant-warning-text-patch-cambiar-estado-de-una-suscripción" collapsed>
+       <template #title><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-8 px-4 text-base rounded-md">
+    <span>PATCH</span>
+</span>  Cambiar estado de una suscripción</template>
+<div class="mb-6 overflow-hidden border rounded-md docs-columns dark:border-dark-650" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
+    <div class="flex items-center px-5 py-3 font-medium leading-snug text-gray-900 border-b border-gray-200 dark:border-dark-650 dark:text-white border-r">
+        <span>Módulo implicado</span>
+    </div>
+    <div class="flex items-center px-5 py-3 font-medium leading-snug text-gray-900 border-b border-gray-200 dark:border-dark-650 dark:text-white">
+        <span>Descripción</span>
+    </div>
+    <div class="px-5 py-3 docs-columns-content border-r border-gray-200 dark:border-dark-650">
+<p>Facturación y Autogestión (F&amp;A)</p>
+    </div>
+    <div class="px-5 py-3 docs-columns-content">
+<p>Se realiza el cambio de estado de una factura. Este estado es utilizado para verificar que suscripción será eliminada en el futuro.</p>
+    </div>
+</div>
+<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-8 px-4 text-base rounded-md">
+    <span>PATCH</span>
+</span> <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-500 dark:text-blue-400 border border-blue-500 dark:border-blue-400 h-8 px-3 text-sm rounded-full">
+    <span><a href="https://notflix-fya-backend.herokuapp.com/api/subscriptions/:userId/:subscriptionId">https://notflix-fya-backend.herokuapp.com/api/subscriptions/:userId/:subscriptionId</a></span>
+</span></p>
+<div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre class="mermaid w-full">sequenceDiagram
+    F&amp;A-&gt;&gt;BD: PATCH by :userId y :subscriptionId
+    alt Correct PATCH
+        BD-&gt;&gt;F&amp;A: {code: 201, data: {...}}
+    else Bad PATCH
+         BD-&gt;&gt;F&amp;A: {code: 404, data: &quot;Cannot create invoice because userId doesn't exist&quot;}
+    end</pre></div>
 <doc-anchor-target id="endpoints-facturas">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#endpoints-facturas">#</doc-anchor-trigger>
         <span>Endpoints facturas</span>
     </h3>
 </doc-anchor-target>
-<doc-panel id="badge-size-xl-variant-primary-text-get-obtener-facturas-de-un-usuario" collapsed>
-    <template #title><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-8 px-4 text-base rounded-md">
+   </doc-panel>
+   <doc-panel id="badge-size-xl-variant-primary-text-get-obtener-facturas-de-un-usuario" collapsed>
+       <template #title><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-8 px-4 text-base rounded-md">
     <span>GET</span>
 </span>  Obtener facturas de un usuario</template>
 <div class="mb-6 overflow-hidden border rounded-md docs-columns dark:border-dark-650" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
@@ -356,7 +388,8 @@ let payload = {
     else Bad GET
          BD-&gt;&gt;F&amp;A: {code: 500, data: &quot;ERROR-001&quot;, message: &quot;Error&quot;}
     end</pre></div>
-</doc-panel>
+   </doc-panel>
+</doc-panels>
 <doc-panel id="badge-size-xl-variant-primary-text-get-obtener-factura-por-id-de-factura" collapsed>
     <template #title><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-8 px-4 text-base rounded-md">
     <span>GET</span>
@@ -521,6 +554,6 @@ let payload = {
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "Endpoints", icon: "file", hasPrism: true, hasMermaid: true }</script>
+        <script>window.__DOCS__ = { "title": "Endpoints", icon: "file", hasPrism: true, hasMermaid: true, hasMath: false }</script>
     </body>
 </html>
