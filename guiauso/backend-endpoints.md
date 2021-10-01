@@ -55,7 +55,6 @@ sequenceDiagram
 ===
 ### Endpoints suscripciones
 
-
 ==- [!badge size="xl" variant="primary " text="GET"]  Obtener suscripciones de un usuario
 
 ||| Módulo implicado
@@ -95,18 +94,39 @@ Se realiza el registro a un nuevo paquete.
 ```mermaid
 sequenceDiagram
     F&A->>BD: POST by :userId
-    alt Correct GET
+    alt Correct POST
         BD->>F&A: {code: 201, data: {...}}
-    else Bad GET
+    else Bad POST
          BD->>F&A: {code: 404, data: "Cannot create invoice because userId doesn't exist"}
     end
 ```
 ===
 
 
+==- [!badge size="xl" variant="warning" text="PATCH"]  Cambiar estado de una suscripción
+
+||| Módulo implicado
+Facturación y Autogestión (F&A)
+||| Descripción
+Se realiza el cambio de estado de una factura. Este estado es utilizado para verificar que suscripción será eliminada en el futuro.
+|||
+
+
+[!badge size="xl" variant="warning " text="PATCH"] [!badge corners="pill" size="l" variant="info" text="https://notflix-fya-backend.herokuapp.com/api/subscriptions/:userId/:subscriptionId"]
+
+
+```mermaid
+sequenceDiagram
+    F&A->>BD: PATCH by :userId y :subscriptionId
+    alt Correct PATCH
+        BD->>F&A: {code: 201, data: {...}}
+    else Bad PATCH
+         BD->>F&A: {code: 404, data: "Cannot create invoice because userId doesn't exist"}
+    end
+```
+
 
 ### Endpoints facturas
-
 
 
 ==- [!badge size="xl" variant="primary " text="GET"]  Obtener facturas de un usuario
