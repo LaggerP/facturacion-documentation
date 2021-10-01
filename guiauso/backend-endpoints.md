@@ -124,6 +124,7 @@ sequenceDiagram
          BD->>F&A: {code: 404, data: "Cannot create invoice because userId doesn't exist"}
     end
 ```
+===
 
 
 ### Endpoints facturas
