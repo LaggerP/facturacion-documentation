@@ -26,11 +26,11 @@
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("/facturacion-documentation/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="/facturacion-documentation/favicon.ico" rel="icon" />
-    <link href="/facturacion-documentation/resources/css/retype.css?v=1.10.686375593361" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/facturacion-documentation/resources/css/retype.css?v=1.10.686375762135" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/facturacion-documentation/resources/js/config.js?v=1.10.686375593361" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/facturacion-documentation/resources/js/config.js?v=1.10.686375762135" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/facturacion-documentation/resources/js/retype.js?v=1.10" defer data-turbo-track="reload"></script>
-    <script id="prism-js" type="text/javascript" src="/facturacion-documentation/resources/js/prism.js?v=1.10.686375593361" defer></script>
+    <script id="prism-js" type="text/javascript" src="/facturacion-documentation/resources/js/prism.js?v=1.10.686375762135" defer></script>
     <script id="mermaid-js" type="text/javascript" src="/facturacion-documentation/resources/js/mermaid.js?v=1.10" defer></script>
 </head>
     <body>
@@ -320,9 +320,8 @@ let payload = {
          BD-&gt;&gt;F&amp;A: {code: 404, data: &quot;Cannot create invoice because userId doesn't exist&quot;}
     end</pre></div>
 </doc-panel>
-<doc-panels>
-   <doc-panel id="badge-size-xl-variant-warning-text-patch-cambiar-estado-de-una-suscripción" collapsed>
-       <template #title><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-8 px-4 text-base rounded-md">
+<doc-panel id="badge-size-xl-variant-warning-text-patch-cambiar-estado-de-una-suscripción" collapsed>
+    <template #title><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-8 px-4 text-base rounded-md">
     <span>PATCH</span>
 </span>  Cambiar estado de una suscripción</template>
 <div class="mb-6 overflow-hidden border rounded-md docs-columns dark:border-dark-650" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
@@ -351,15 +350,15 @@ let payload = {
     else Bad PATCH
          BD-&gt;&gt;F&amp;A: {code: 404, data: &quot;Cannot create invoice because userId doesn't exist&quot;}
     end</pre></div>
+</doc-panel>
 <doc-anchor-target id="endpoints-facturas">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#endpoints-facturas">#</doc-anchor-trigger>
         <span>Endpoints facturas</span>
     </h3>
 </doc-anchor-target>
-   </doc-panel>
-   <doc-panel id="badge-size-xl-variant-primary-text-get-obtener-facturas-de-un-usuario" collapsed>
-       <template #title><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-8 px-4 text-base rounded-md">
+<doc-panel id="badge-size-xl-variant-primary-text-get-obtener-facturas-de-un-usuario" collapsed>
+    <template #title><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-8 px-4 text-base rounded-md">
     <span>GET</span>
 </span>  Obtener facturas de un usuario</template>
 <div class="mb-6 overflow-hidden border rounded-md docs-columns dark:border-dark-650" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
@@ -388,8 +387,7 @@ let payload = {
     else Bad GET
          BD-&gt;&gt;F&amp;A: {code: 500, data: &quot;ERROR-001&quot;, message: &quot;Error&quot;}
     end</pre></div>
-   </doc-panel>
-</doc-panels>
+</doc-panel>
 <doc-panel id="badge-size-xl-variant-primary-text-get-obtener-factura-por-id-de-factura" collapsed>
     <template #title><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-8 px-4 text-base rounded-md">
     <span>GET</span>
