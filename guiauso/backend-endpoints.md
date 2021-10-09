@@ -112,12 +112,12 @@ Se realiza el cambio de estado de una factura. Este estado es utilizado para ver
 |||
 
 
-[!badge size="xl" variant="warning " text="PATCH"] [!badge corners="pill" size="l" variant="info" text="https://notflix-fya-backend.herokuapp.com/api/subscriptions/:userId/:subscriptionId"]
+[!badge size="xl" variant="warning " text="PATCH"] [!badge corners="pill" size="l" variant="info" text="https://notflix-fya-backend.herokuapp.com/api/subscriptions/:userId/:subscriptionId/:packageId"]
 
 
 ```mermaid
 sequenceDiagram
-    F&A->>BD: PATCH by :userId y :subscriptionId
+    F&A->>BD: PATCH by :userId, :subscriptionId y :packageId
     alt Correct PATCH
         BD->>F&A: {code: 201, data: {...}}
     else Bad PATCH
