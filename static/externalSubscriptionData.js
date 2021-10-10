@@ -9,14 +9,16 @@ let payload = {
    "subscriptionId": "string",
    "packageData": [
        {
-           "id": 1,
-           "name": "string",
-           "price": 200
+           "id": 1, //Package id from subscription BD
+           "name": "string", //Package name from subscription BD
+           "price": 200,
+           "uriImg": "string" //Image Uri from subscription BD
        },
        {
            "id": 2,
            "name": "string",
-           "price": 200
+           "price": 200,
+           "uriImg": "string"
        }
    ]
 }
