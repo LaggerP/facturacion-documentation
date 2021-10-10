@@ -26,11 +26,11 @@
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("/facturacion-documentation/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="/facturacion-documentation/favicon.ico" rel="icon" />
-    <link href="/facturacion-documentation/resources/css/retype.css?v=1.10.687111750796" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/facturacion-documentation/resources/css/retype.css?v=1.10.687215667429" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/facturacion-documentation/resources/js/config.js?v=1.10.687111750796" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/facturacion-documentation/resources/js/config.js?v=1.10.687215667429" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/facturacion-documentation/resources/js/retype.js?v=1.10" defer data-turbo-track="reload"></script>
-    <script id="prism-js" type="text/javascript" src="/facturacion-documentation/resources/js/prism.js?v=1.10.687111750796" defer></script>
+    <script id="prism-js" type="text/javascript" src="/facturacion-documentation/resources/js/prism.js?v=1.10.687215667429" defer></script>
     <script id="mermaid-js" type="text/javascript" src="/facturacion-documentation/resources/js/mermaid.js?v=1.10" defer></script>
 </head>
     <body>
@@ -305,11 +305,15 @@ Esto nos permitirá poder &quot;pintar&quot; la aplicación frontend.
 
 let payload = {
     &quot;userId&quot;: 1,
-    &quot;email&quot;:&quot;string&quot;, //email del usuario
-    &quot;name&quot;: &quot;string&quot;,
+    &quot;email&quot;:&quot;string&quot;, //User Email
+    &quot;name&quot;: &quot;string&quot;, //Package name
     &quot;subscriptionId&quot;: 1,
     &quot;packageId&quot;: 4,
-    &quot;cost&quot;: 300
+    &quot;cost&quot;: 300,
+    &quot;firstName&quot;:&quot;string&quot;,
+    &quot;lastName&quot;:&quot;string&quot;,
+    &quot;telephone&quot;:&quot;string&quot;,
+    &quot;uriImg&quot;: &quot;string&quot; //Package img Uri
 }</code></pre>
 </doc-codeblock></div>
 <div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre class="mermaid w-full">sequenceDiagram
