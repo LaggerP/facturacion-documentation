@@ -93,7 +93,7 @@ Se realiza el registro a un nuevo paquete.
 
 ```mermaid
 sequenceDiagram
-    F&A->>BD: POST by :userId
+    F&A->>BD: POST
     alt Correct POST
         BD->>F&A: {code: 201, data: {...}}
     else Bad POST
