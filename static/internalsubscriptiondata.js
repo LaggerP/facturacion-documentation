@@ -1,6 +1,7 @@
 // Example body request structure for new subscription registration
 // ALL VALUES CANNOT BE NULL
 let payload = {
+    "userId": 1,
     "userObjectId": "string", //ObjectId del usuario
     "email":"string", //User Email
     "name": "string", //Package name
