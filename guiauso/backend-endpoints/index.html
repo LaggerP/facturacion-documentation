@@ -26,11 +26,11 @@
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("/facturacion-documentation/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="/facturacion-documentation/favicon.ico" rel="icon" />
-    <link href="/facturacion-documentation/resources/css/retype.css?v=1.10.687629880872" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/facturacion-documentation/resources/css/retype.css?v=1.10.687638816657" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/facturacion-documentation/resources/js/config.js?v=1.10.687629880872" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/facturacion-documentation/resources/js/config.js?v=1.10.687638816657" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/facturacion-documentation/resources/js/retype.js?v=1.10" defer data-turbo-track="reload"></script>
-    <script id="prism-js" type="text/javascript" src="/facturacion-documentation/resources/js/prism.js?v=1.10.687629880872" defer></script>
+    <script id="prism-js" type="text/javascript" src="/facturacion-documentation/resources/js/prism.js?v=1.10.687638816657" defer></script>
     <script id="mermaid-js" type="text/javascript" src="/facturacion-documentation/resources/js/mermaid.js?v=1.10" defer></script>
 </head>
     <body>
@@ -304,7 +304,7 @@ Esto nos permitirá poder &quot;pintar&quot; la aplicación frontend.
 <pre class="language-javascript"><code v-pre class="language-javascript">// Example body request structure for new subscription registration
 // ALL VALUES CANNOT BE NULL
 let payload = {
-    &quot;userId&quot;: 1,
+    &quot;objectId&quot;: &quot;string&quot;, //ObjectId del usuario
     &quot;email&quot;:&quot;string&quot;, //User Email
     &quot;name&quot;: &quot;string&quot;, //Package name
     &quot;subscriptionId&quot;: 1, //id obtenido del context de React (una subscriptionId tiene varios paquetes asociados)
