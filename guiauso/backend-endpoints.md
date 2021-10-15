@@ -87,7 +87,7 @@ Se realiza el registro a un nuevo paquete.
 |||
 
 
-[!badge size="xl" variant="success " text="POST"] [!badge corners="pill" size="l" variant="info" text="https://notflix-fya-backend.herokuapp.com/api/subscriptions/internal"]
+[!badge size="xl" variant="success " text="POST"] [!badge corners="pill" size="l" variant="info" text="https://notflix-fya-backend.herokuapp.com/api/subscriptions/internal/new"]
 
 :::code source="../static/internalSubscriptionData.js" :::
 
