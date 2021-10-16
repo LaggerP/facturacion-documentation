@@ -188,6 +188,8 @@ Se realiza la facturación de todas las suscripciones del mes (30 dias) a partir
 
 [!badge size="xl" variant="success " text="POST"] [!badge corners="pill" size="l" variant="info" text="https://notflix-fya-backend.herokuapp.com/api/invoices/:userId/new-paid"]
 
+:::code source="../static/newPayAndNonPaid.js" :::
+
 
 ```mermaid
 sequenceDiagram
@@ -200,17 +202,18 @@ sequenceDiagram
 ```
 ===
 
-==- [!badge size="xl" variant="success" text="POST"]  Generar un nuevo pago con estado NO_PAGADO
+==- [!badge size="xl" variant="success" text="POST"]  Generar un nuevo pago con estado DEMORADO
 
 ||| Módulo implicado
 Facturación y Autogestión (F&A)
 ||| Descripción
-Se simula el NO pago de una suscripción a partir de un **:userId** y **:subscriptionId**
+Se simula el NO pago de una suscripción a partir de un **:userId** y **:subscriptionId**. Se asigna el estado de DEMORADO y se elimina la suscripción a los 7 días si no se regulariza el estado.
 |||
 
 
 [!badge size="xl" variant="success " text="POST"] [!badge corners="pill" size="l" variant="info" text="https://notflix-fya-backend.herokuapp.com/api/invoices/:userId/:subscriptionId/non-paid"]
 
+:::code source="../static/newPayAndNonPaid.js" :::
 
 ```mermaid
 sequenceDiagram
