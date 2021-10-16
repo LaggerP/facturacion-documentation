@@ -16,20 +16,23 @@
     <meta property="og:url" content="https://laggerp.me/facturacion-documentation/integracion/clientes/">
     <meta property="og:title" content="Aplicación cliente - endpoints de integración">
     <meta property="og:description" content="Resumen de acciones:**">
+    <meta property="og:image" content="https://laggerp.me/facturacion-documentation/facturacion-documentation/static/correcttoken.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://laggerp.me/facturacion-documentation/integracion/clientes/">
     <meta property="twitter:title" content="Aplicación cliente - endpoints de integración">
     <meta property="twitter:description" content="Resumen de acciones:**">
+    <meta property="twitter:image" content="https://laggerp.me/facturacion-documentation/facturacion-documentation/static/correcttoken.png">
     
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("/facturacion-documentation/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="/facturacion-documentation/favicon.ico" rel="icon" />
-    <link href="/facturacion-documentation/resources/css/retype.css?v=1.10.687638865594" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/facturacion-documentation/resources/css/retype.css?v=1.10.687668603262" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/facturacion-documentation/resources/js/config.js?v=1.10.687638865594" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/facturacion-documentation/resources/js/config.js?v=1.10.687668603262" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/facturacion-documentation/resources/js/retype.js?v=1.10" defer data-turbo-track="reload"></script>
+    <script id="prism-js" type="text/javascript" src="/facturacion-documentation/resources/js/prism.js?v=1.10.687668603262" defer></script>
     <script id="mermaid-js" type="text/javascript" src="/facturacion-documentation/resources/js/mermaid.js?v=1.10" defer></script>
 </head>
     <body>
@@ -188,6 +191,26 @@
     <span><a href="https://facturacion-front.vercel.app/?from=**from**&amp;token=**token*">https://facturacion-front.vercel.app/?from=**from**&amp;token=**token*</a>*</span>
 </span></p>
 <p>En donde <strong>from</strong> puede ser <code v-pre>web</code> o <code v-pre>mobile</code> y <strong>token</strong> el token del cliente.</p>
+<p><strong>Es importante pasar en el token el objectId del cliente</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">Ejemplo de la información que debe estar incluido en el token</div>
+<pre class="language-javascript"><code v-pre class="language-javascript">    //Este objectId es el que va a guardarse en nuestra base de datos. 
+    //Es el que nos permite obtener la información del usuario
+    
+    objectId = &quot;tuObjectId&quot;; </code></pre>
+</doc-codeblock></div>
+<p>Si se manda el token de forma correcta deberá poder ver la siguiente pantalla:
+<figure class="content-center">
+    <img src="/facturacion-documentation/static/correcttoken.png" alt="" />
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
+<p>Si se manda el token de forma incorrecta deberá poder ver la siguiente pantalla:
+<figure class="content-center">
+    <img src="/facturacion-documentation/static/errortokenmessage.png" alt="" />
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
 
 
 
@@ -259,6 +282,6 @@
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "Aplicación cliente - endpoints de integración", icon: "file", hasPrism: false, hasMermaid: true, hasMath: false }</script>
+        <script>window.__DOCS__ = { "title": "Aplicación cliente - endpoints de integración", icon: "file", hasPrism: true, hasMermaid: true, hasMath: false }</script>
     </body>
 </html>
