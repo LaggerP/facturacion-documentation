@@ -59,14 +59,5 @@ sequenceDiagram
     participant S as Suscripción
     F->>S: ¡El usuario se dió de baja en uno/s de sus paquetes! Te actualizo los datos.
 ```
-!!!
 
-### Modificar una suscripción.
-!!!light Modificación
-```mermaid
-sequenceDiagram
-    participant F as Facturación y Autogestión
-    participant S as Suscripción
-    F->>S: ¡El usuario modificó uno/s de sus paquetes! Te actualizo los datos.
-```
 !!!
