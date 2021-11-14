@@ -26,11 +26,11 @@
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("/facturacion-documentation/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="/facturacion-documentation/favicon.ico" rel="icon" />
-    <link href="/facturacion-documentation/resources/css/retype.css?v=1.10.688258460258" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/facturacion-documentation/resources/css/retype.css?v=1.10.690247526972" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/facturacion-documentation/resources/js/config.js?v=1.10.688258460258" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/facturacion-documentation/resources/js/config.js?v=1.10.690247526972" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/facturacion-documentation/resources/js/retype.js?v=1.10" defer data-turbo-track="reload"></script>
-    <script id="prism-js" type="text/javascript" src="/facturacion-documentation/resources/js/prism.js?v=1.10.688258460258" defer></script>
+    <script id="prism-js" type="text/javascript" src="/facturacion-documentation/resources/js/prism.js?v=1.10.690247526972" defer></script>
     <script id="mermaid-js" type="text/javascript" src="/facturacion-documentation/resources/js/mermaid.js?v=1.10" defer></script>
 </head>
     <body>
@@ -226,24 +226,24 @@
 // ALL VALUES CANNOT BE NULL
 
 let payload = {
-   &quot;userObjectId&quot;: &quot;string&quot;, //objectId from SSO
-   &quot;firstName&quot;: &quot;string&quot;,
-   &quot;lastName&quot;: &quot;string&quot;,
-   &quot;email&quot;: &quot;string&quot;,
-   &quot;telephone&quot;: &quot;string&quot;,
-   &quot;subscriptionId&quot;: &quot;string&quot;,
-   &quot;packageData&quot;: [
+   serObjectId: &quot;string&quot;, //objectId from SSO
+   firstName: &quot;string&quot;,
+   lastName: &quot;string&quot;,
+   email: &quot;string&quot;,
+   telephone: &quot;string&quot;,
+   subscriptionId: &quot;string&quot;,
+   packageData: [
        {
-           &quot;id&quot;: 1, //Package id from subscription BD
-           &quot;name&quot;: &quot;string&quot;, //Package name from subscription BD
-           &quot;price&quot;: 200,
-           &quot;uriImg&quot;: &quot;string&quot; //Image Uri from subscription BD
+           id: 1, //Package id from subscription BD
+           name: &quot;string&quot;, //Package name from subscription BD
+           price: 200,
+           uriImg: &quot;string&quot; //Image Uri from subscription BD
        },
        {
-           &quot;id&quot;: 2,
-           &quot;name&quot;: &quot;string&quot;,
-           &quot;price&quot;: 200,
-           &quot;uriImg&quot;: &quot;string&quot;
+           id: 2,
+           name: &quot;string&quot;,
+           price: 200,
+           uriImg: &quot;string&quot;
        }
    ]
 }</code></pre>
